@@ -1,0 +1,150 @@
+ @font-face {
+    font-family: HelveticaNeueLTStd-Lt;
+    src: local(HelveticaNeueLTStd-Lt), url('../Fonts/HelveticaNeueLTPro-Lt.otf') format('opentype');
+}
+  @font-face {
+    font-family: Helvetica Neue;
+    src: local(Helvetica Neue), url('../Fonts/Helvetica-Normal.ttf') format('truetype');
+}
+footer{float:left; width:100%;}
+body{font-family:HelveticaNeueLTStd-Lt;}
+.navbar{margin:0;}
+ .slick-prev, .slick-next
+ {border-radius:10px; height:18px;}
+.Main-container
+{
+ height:90px;
+ margin:0 90px 20px 90px;
+ font-family:HelveticaNeueLTStd-Lt;
+ color:#333;
+ font-size:16px;
+ font-weight:600;
+}
+.tab-container1
+{
+ float:left;
+ border-top: 1px solid gray;
+ height:100%;
+ text-align:center;
+ width:160px;
+ margin:0 40px 0 20px;
+}
+
+.tab-container2
+{
+ float:left;
+ border-top: 1px solid gray;
+ height:100%;
+ padding: 40px 15px 20px 15px;
+ text-align:center;
+ width:auto;
+ margin:0 40px 0 20px;
+}
+
+.tab-container3
+{
+ float:left;
+ border-top: 1px solid gray;
+ height:100%;
+ padding: 20px 15px 20px 15px;
+ text-align:justify;
+ width:460px;
+ margin:0 40px 0 20px;
+}
+
+.tab-container4
+{
+ float:left;
+ border-top: 1px solid gray;
+ height:100%;
+ padding: 40px 15px 20px 15px;
+ text-align:center;
+ width:auto;
+ cursor:pointer;
+ color:#005f8d;
+ margin:0 40px 0 20px;
+}
+
+
+
+/* News Client Details Section CSS*/
+.Client-Content-Container
+{
+margin:0 0 0 25px; display:none;
+}
+.back-Link
+{
+ cursor:pointer;
+ color:#80a9c2;
+}
+
+.Details-Heading-section
+{
+    font-family:HelveticaNeueLTStd-Lt;
+	font-size:30px !important;
+	margin: 5px 0 5px 0 !important;
+	text-align:left;
+}
+.content-container
+{
+float:left;
+width:97%;
+height:auto;
+margin:0;
+padding:0;
+}
+.content-container-left
+{
+ float:left;
+ width:80%;
+ height:auto;
+ padding:0 15px 0 0;
+}
+
+.content-container-right
+{
+ float:right;
+ width:15%;
+ height:auto;
+}
+
+.content-Section1
+{
+ float:left;
+ width:100%;
+ height:auto;
+ margin-bottom:20px;
+ //text-align:justify;
+}
+
+.image-styler
+{width:100%;
+height:auto;
+text-align:center;
+padding:10px;
+}
+
+.our-Solution-div
+{
+ width:100%;
+ height:auto;
+ float:left;
+}
+
+.Cloud-Image
+{
+width:100%;
+height:auto;
+text-align:center;
+float:left;
+}
+
+@media screen and (max-width: 768px) {
+
+    .OfferingCustomeRow {
+        margin-right: 15px !important;
+    }
+    #OfferingContents {
+    border:none;
+    }
+}

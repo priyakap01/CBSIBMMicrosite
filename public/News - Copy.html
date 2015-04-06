@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app = "phonecatApp">
+<head>
+  <title>News</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="CustomCss/AboutCustom.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="slick/slick.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers/Productioncontrollers.js"></script>
+  <link href="CustomCss/NewsCustom.css" rel="stylesheet" media="screen">
+ 
+</head>
+<body>
+    <header>
+        <div class="HeaderAbout">
+           <img src="images/ibm-logo-top.png" alt="ImageSlider"/>
+        </div>
+    
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     <div class="ibmcloudLogo"><a href="#"><img src="images/IBM-CBS-Logo.svg" /></a></div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="about.html" id="AboutLink">About</a></li>
+        <li><a href="Offerings.html" id="OfferingsLink">Solutions</a></li>
+        <li><a href="Services.html" id="ServicesLink">Services</a></li>
+        <li><a href="stories.html" id="StoriesLink">Client Stories</a></li>
+		<li><a href="dashboardsummary.html" id="DashboardLink">Dashboard</a>
+		 <ul>
+		 <li><a href="dashboardpipeline.html">Pipeline</a></li>
+		 <li><a href="dashboardwin.html">Wins</a></li>
+		 <li><a href="dashboard.html">Delivery</a></li>
+		 </ul>
+		</li>
+        <li><a href="news.html" id="NewsLink">News</a></li>
+        <li><a href="FAQ.html" id="FAQLink">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  </header>
+    <div class="ImageSlider" style="margin:0 !important">
+	  <div>
+          <img class="SlidingImage" src="images/news-banner.jpg" alt="ImageSlider"/>
+      </div>
+    </div>
+
+    <!-- News Client Summary Section Starts -->
+    <span id="News-Client-Summary">
+	<section class="ArticleHolder">
+        Market News at Cloud Business Solutions
+    </section>
+	
+	<div class="col-sm-12">
+	  <div class="Main-container">
+	   <div class="tab-container1" style="border-top:2px solid gray">
+	    <img style="padding:23px 0 0 0;" src="images/cbs-client-jostens.jpg" alt="client logo"/>
+	   </div>
+	   <div class="tab-container2" style="border-top:2px solid gray">
+	    March, 2015
+	   </div>
+	   <div class="tab-container3" style="border-top:2px solid gray">
+	    Jostens Drives more sales through the digital channel and enhances its consumer experience using IBM's WebSphere Commerce.
+	   </div>
+	   <div class="tab-container4" style="border-top:2px solid gray">
+	    <span id="ShowJostens">Read More</span>
+	   </div>
+	  </div>
+	  
+	  <div class="Main-container">
+	   <div class="tab-container1">
+	    <img style="padding:25px 0 0 13px;" src="images/cbs-client-gk.png" alt="client logo"/>
+	   </div>
+	   <div class="tab-container2">
+	    March, 2015
+	   </div>
+	   <div class="tab-container3">
+	    G&K targets a centralized data, governance and analytics solution, addressing the foundational needs of the centralized and decentralized business areas.
+	   </div>
+	   <div class="tab-container4">
+	    <span id="ShowGK">Read More</span>
+	   </div>
+	  </div>
+	  
+	  <div class="Main-container">
+	   <div class="tab-container1" style="border-bottom:1px solid gray">
+	    <img style="padding:22px 0 0 0;" src="images/cbs-client-joygloabals.jpg" alt="client logo"/>
+	   </div>
+	   <div class="tab-container2" style="border-bottom:1px solid gray; padding: 35px 15px 20px 15px">
+	    March, 2015
+	   </div>
+	   <div class="tab-container3" style="border-bottom:1px solid gray; padding: 15px 15px 20px 15px">
+	    Enabling Joy Global's business transformation journey towards a service based model through systematic optimization.
+	   </div>
+	   <div class="tab-container4" style="border-bottom:1px solid gray; padding: 35px 15px 20px 15px">
+	    <span id="ShowJoyGlobal">Read More</span>
+	   </div>
+	  </div>
+	 </div>
+	 </span>
+	 <!-- News Client Summary Section Ends -->
+	
+	
+	<!-- News Jostens Client Details Section Starts -->
+	<div id="JostensClientDetails" class="col-sm-12 Client-Content-Container">
+	 <div style="float:left; width:100%"><span class="back-Link">News</span> > wins</div>
+	 
+	 <section class="Details-Heading-section">
+        Jostens Drives more sales through the digital channel and enhances its consumer experience using IBM's WebSphere Commerce.
+     </section>
+	 
+	 <div class="content-container">
+	  <div class="content-container-left">
+	    <div class="content-Section1">
+		 <h3>Business Challenge</h3>
+		 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		</div>
+		<div class="content-Section1">
+		 <h3>Solution</h3>
+		 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker</p>
+		</div>
+		<div class="content-Section1">
+		 <h3>Business Outcomes</h3>
+		 <p>Enhanced eCommerce capabilities</br>Increased Sales Revenues through the digital channel</br>Improved consumer experience</p>
+		</div>
+	  </div>
+	  <div class="content-container-right">
+	   <div class="client-image-container">
+	   <img class="image-styler" src="images/cbs-client-jostens.jpg" alt="client logo">
+	   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+	   </div>
+	   <div class="our-Solution-div">
+	    <div class="Cloud-Image"><img src="images/cloud-image.jpg" alt="cloud image"><label>Our Solution</label></div>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+	   </div>
+	  </div>
+	 </div>
+	
+	</div>
+	<!-- News Jostens Client Details Section Ends -->
+	
+	<!-- News G&K Client Details Section Starts -->
+	<div id="GKClientDetails" class="col-sm-12 Client-Content-Container">
+	 <div style="float:left; width:100%"><span class="back-Link">News</span> > wins</div>
+	 
+	 <section class="Details-Heading-section">
+        Jostens Drives more sales through the digital channel and enhances its consumer experience using IBM's WebSphere Commerce.
+     </section>
+	 
+	 <div class="content-container">
+	  <div class="content-container-left">
+	    <div class="content-Section1">
+		 <h3>Business Challenge</h3>
+		 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		</div>
+		<div class="content-Section1">
+		 <h3>Solution</h3>
+		 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker</p>
+		</div>
+		<div class="content-Section1">
+		 <h3>Business Outcomes</h3>
+		 <p>Enhanced eCommerce capabilities</br>Increased Sales Revenues through the digital channel</br>Improved consumer experience</p>
+		</div>
+	  </div>
+	  <div class="content-container-right">
+	   <div class="client-image-container">
+	   <img class="image-styler" src="images/cbs-client-gk.png" alt="client logo">
+	   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+	   </div>
+	   <div class="our-Solution-div">
+	    <div class="Cloud-Image"><img src="images/cloud-image.jpg" alt="cloud image"><label>Our Solution</label></div>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+	   </div>
+	  </div>
+	 </div>
+	
+	</div>
+	<!-- News G&K Client Details Section Ends -->
+	
+	<!-- News Joy Global Client Details Section Starts -->
+	<div id="JoyGlobalClientDetails" class="col-sm-12 Client-Content-Container">
+	 <div style="float:left; width:100%"><span class="back-Link">News</span> > wins</div>
+	 
+	 <section class="Details-Heading-section">
+        Jostens Drives more sales through the digital channel and enhances its consumer experience using IBM's WebSphere Commerce.
+     </section>
+	 
+	 <div class="content-container">
+	  <div class="content-container-left">
+	    <div class="content-Section1">
+		 <h3>Business Challenge</h3>
+		 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		</div>
+		<div class="content-Section1">
+		 <h3>Solution</h3>
+		 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker</p>
+		</div>
+		<div class="content-Section1">
+		 <h3>Business Outcomes</h3>
+		 <p>Enhanced eCommerce capabilities</br>Increased Sales Revenues through the digital channel</br>Improved consumer experience</p>
+		</div>
+	  </div>
+	  <div class="content-container-right">
+	   <div class="client-image-container">
+	   <img class="image-styler" src="images/cbs-client-joygloabals.jpg" alt="client logo">
+	   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+	   </div>
+	   <div class="our-Solution-div">
+	    <div class="Cloud-Image"><img src="images/cloud-image.jpg" alt="cloud image"><label>Our Solution</label></div>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+	   </div>
+	  </div>
+	 </div>
+	
+	</div>
+	<!-- News Joy Global Client Details Section Ends -->
+	
+	
+    <footer>
+     <section class="FooterSection">
+        <img src="images/ibm-logo-bottom.png" alt="Footer" class="FooterImage"/>
+     </section>
+    </footer>
+</body>    
+</html>
+<script>
+    $(document).ready(function () {
+	
+	   $("#myNavbar").find("a").css("border", "none");
+            $('#NewsLink').attr('style', 'color: #333333 !important; font-weight: bold !important; font-family:Helvetica');
+            $("#NewsLink").css("border-bottom","2px solid #1a5d94");
+       
+	   $("#ShowJostens").click(function () {
+            $("#News-Client-Summary").hide();
+            $("#JostensClientDetails").show();
+       });
+       $("#ShowGK").click(function () {
+            $("#News-Client-Summary").hide();
+            $("#GKClientDetails").show();
+       });
+	   $("#ShowJoyGlobal").click(function () {
+            $("#News-Client-Summary").hide();
+            $("#JoyGlobalClientDetails").show();
+       });
+	   
+	   $(".back-Link").click(function () {
+            $("#JoyGlobalClientDetails").hide();
+			$("#GKClientDetails").hide();
+			$("#JostensClientDetails").hide();
+			$("#News-Client-Summary").show();
+       });
+	   
+        $('.ImageSlider').slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    slidesToShow: 1
+                }
+            }
+          ]
+        });
+	
+	});
+    
+</script>

@@ -1,0 +1,286 @@
+ /*For About.HTML*/
+.HeaderAbout{
+    background-color: #000;
+    color: #fff;
+    height: 40px;
+}
+ .navbar-default{
+    background-color: white !important;
+    background-image:url("../images/top-nav-bg-mltplyr.jpg");
+    background-repeat: repeat-x;
+    overflow:hidden !important;    
+ }
+
+body {
+    font-family:HelveticaNeueLTStd-Lt, HelveticaNeue-Regular,' Helvetica','Helvetica Neue Regular', 'Helvetica Neue', HelvRegularIBM;
+}
+  @font-face {
+    font-family: HelveticaNeueLTStd-Lt;
+    src: local(HelveticaNeueLTStd-Lt), url('../Fonts/HelveticaNeueLTPro-Lt.otf') format('opentype');
+}
+  @font-face {
+    font-family: Helvetica Neue;
+    src: local(Helvetica Neue), url('../Fonts/Helvetica-Normal.ttf') format('truetype');
+}
+
+/* just some CSS for the loading DIV */
+ .loading {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left: 0;
+    background: #000;
+    z-index:9999;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 300px;
+    color: #fff;
+}
+
+ .Heading>a{
+     font-size: 26px !important;
+     color: #000 !important;
+ }
+ .navbar-default .navbar-nav>li>a{
+     color: #5586AF !important;
+     font-size: 15px;
+ }
+ .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>a:hover, .navbar-default .navbar-nav>a:focus{
+     color: #000000 !important;
+     border-bottom: 2px solid #1a5d94;
+	 font-family:Helvetica Neue !important;
+ }
+.nav navbar-nav navbar-right>li>a:hover{
+     color: #000000 !important;
+     border-bottom: 2px solid #1a5d94;
+	 font-family:Helvetica Neue !important;
+ } 
+ #myNavbar ul
+{
+	list-style:none;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+#myNavbar ul a
+{
+	display:block;
+	color:#333;
+	text-decoration:none;
+	font-weight:700;
+}
+
+#myNavbar ul li
+{
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+#myNavbar ul li.current-menu-item
+{
+	background:#ddd
+}
+
+#myNavbar ul li:hover
+{
+	background:#f6f6f6
+}
+
+#myNavbar ul ul
+{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background:#fff;
+	padding:0;
+	z-index:9999;
+}
+
+#myNavbar ul ul li
+{
+	float:none;
+	width:107px
+}
+
+#myNavbar ul ul a
+{
+	line-height:120%;
+	padding:10px 15px
+}
+
+#myNavbar ul ul ul
+{
+	top:0;
+	left:100%
+}
+
+#myNavbar ul li:hover > ul
+{
+	display:block
+}
+.navbar{overflow:visible !important;}
+.collapse{overflow:visible !important;}
+ #slider1_container
+ {display: none; position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 370px !important; overflow: hidden;}
+ .slick-prev{
+     background: white !important;
+     background-size: contain;
+     left: 10px !important;
+
+ }
+  .slick-next{
+     right: 10px !important;
+     background: white !important;
+     background-size: contain;
+ }
+ .HeaderAbout>img{
+     margin-top: 9px;
+     margin-left: 16px;
+ }
+ .ImageSlider{
+     margin-top: -20px;
+ }
+ .NormalLabel{
+     display: inline;
+     color: #777 !important;
+     font-weight: normal;
+ }
+ .SlidingImage{
+     width: 100%;
+ }
+ .TeamImageSlider{margin-top:10px;}
+ .TeamImageSlider>img{
+     width: 100%;
+     padding-left: 30px;
+ }
+ .SlideAboutimage { 
+    position: relative; 
+    width: 100%; /* for IE 6 */
+}
+
+.AboutSlideText { 
+   position: absolute; 
+   top: 200px; 
+   left: 0; 
+   width: 100%; 
+}
+ .maintitle{
+     margin: 0 auto;
+float: none;
+ }
+ .TextBind{
+     background: rgba(0, 25, 52, 0.7);
+position: relative;
+margin: 0px !important;
+top: 150px;
+ }
+ .ArticleHolder{
+     padding: 10px 0 10px 0;
+     text-align: center;
+	 font-family:HelveticaNeueLTStd-Lt;
+	 color:black;
+	 font-size:30px !important;
+	 background: url('../images/below-banner-bg-mltplyr.jpg'); 
+     background-repeat: repeat; 
+     background-size: contain;
+ }
+ .HorizontalDivider{
+     border-bottom: 1px solid #ccc;
+	 margin:0 10px 0 10px;
+	 height:1px;
+     width: 98%;
+ }
+ .Thick{
+     border-bottom: 10px solid #45619D;
+     margin-top: 3px;
+ }
+ .FontType{
+     font-size:16px; 
+ }
+ .FontType>.col-xs-6>.row>.col-xs-3{
+     width: 30%;
+ }
+ .row-list>.col-xs-3
+ {text-align:center;}
+ .slick-prev:before, .slick-next:before { 
+    color:#000 !important;
+}
+
+ iframe{
+     height: 400px;
+     margin: 80px 0 0 40px !important;
+     float: left;
+ }
+ .TeamSlidingImage{
+     margin-left: 70px;
+ }
+ .MeetTeam{
+     font-family:HelveticaNeueLTStd-Lt;
+	 font-size:24px;
+	 color:black;
+     margin-top: 20px;
+     text-align: center;
+     margin-bottom: 0px;
+ }
+ .row {
+ margin-top: 20px;
+ margin-bottom: 20px;
+ margin-left: 0 !important;
+}
+
+.ibmcloudLogo
+{width:250px; height:auto; float:left; margin:12px 0 0 -4px;}
+
+.NameTeam{
+     color: #004b88 !important; 
+	 margin:0 !important;
+ }
+ .DesTeam{
+     color: #333333;
+	 margin:0 !important;
+ }
+.FooterSection {
+    background: #111111;
+    height: 69px;
+}
+ .FooterImage{
+     float: right;
+ }
+ .WithText{
+    text-align: justify;
+    text-align: center;
+   width: 260px;
+ }
+ .WithText>img {
+    display: block;
+    margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+    .col-xs-3{
+    display: block !important;
+    float: none !important;
+    width: 100% !important;
+    }
+.col-xs-6{
+    width: 100% !important;
+}
+    body {
+    width: 100%;
+    }
+.TeamSlidingImage{
+    margin-left: 25px;
+}
+iframe{
+       margin-top: 20px;
+       float: none;
+ }
+.FontType>.col-xs-6>.row>.col-xs-3>img {
+margin-left: 40%;
+}
+}

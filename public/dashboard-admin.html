@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  <link href="CustomCss/AboutCustom.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers/Productioncontrollers.js"></script>
+  
+  <!-- bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> 
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>  
+  
+  <link href="stylesheets/bootstrap-editable.css" rel="stylesheet"/>
+  <script src="js/bootstrap-editable.min.js"></script>
+  
+  <link href="CustomCss/DashboardCustom-Admin.css" rel="stylesheet" media="screen">
+  <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+  <script>
+    webshims.setOptions('forms-ext', {types: 'date'});
+    webshims.polyfill('forms forms-ext');
+  </script>
+  
+  <script>
+  $(document).ready(function() {
+  
+	$('#enable').click(function() {
+       $('#offering, #Brands-Involved, #Offering-Alignment, #OP-Model-Alignment, #Project-Manager, #sector, #industry, .box-Content').editable('toggleDisabled');
+    });
+    //toggle `popup` / `inline` mode
+    $.fn.editable.defaults.mode = 'popup';     
+    
+    //make username editable
+    $('#offering').editable();
+	
+	//make brands-involved editable
+    $('#Brands-Involved').editable();
+	
+	//make Offering-Alignment editable
+    $('#Offering-Alignment').editable();
+    
+	//make OP-Model-Alignment editable
+    $('#OP-Model-Alignment').editable();
+	
+	//make Project-Manager editable
+    $('#Project-Manager').editable();
+	
+	//make Project-Manager editable
+    $('.classriskIssue').editable({
+	    type: 'text',
+        title: 'Enter Risk Issue',
+        placement: 'right'
+	});
+	
+	//make Project-Manager editable
+    $('.classselectBox').editable({
+	    type: 'select',
+        title: 'Select Status',
+        placement: 'right',
+		source: [
+            {value: 1, text: 'Closed'},
+            {value: 2, text: 'Open'}
+        ]
+	});
+	
+	//make Project-Manager editable
+    $('.classdatepicker').editable({
+	    type: 'date',
+        title: 'Enter Risk Issue',
+        placement: 'right'
+	});
+	
+	//make box-Content editable
+    $('.box-Content').editable({ 
+        source: [
+              {value: 1, text: 'C'},
+              {value: 2, text: 'W'},
+              {value: 3, text: 'Y'}
+           ]
+    });
+	
+	//make Comments-Update editable
+    $('.Comments-Update').editable({
+	mode:'inline'
+	});
+	
+    //make sector editable
+    $('#sector').editable({
+        type: 'select',
+        title: 'Select Status',
+        placement: 'right',
+        source: [
+            {value: 1, text: 'Public'},
+            {value: 2, text: 'Distribution'},
+            {value: 3, text: 'Communications'},
+			{value: 4, text: 'Industrial'}
+        ]
+        /*
+        //uncomment these lines to send data on server
+        ,pk: 1
+        ,url: '/post'
+        */
+    });
+	
+	//make industry editable
+    $('#industry').editable({
+        type: 'select',
+        title: 'Select Status',
+        placement: 'right',
+        source: [
+            {value: 1, text: 'Consumer Products'},
+            {value: 2, text: 'Chem,Petro and Gas'},
+            {value: 3, text: 'Media and Entertainment'},
+			{value: 4, text: 'Electronics'},
+			{value: 5, text: 'Energy and Utilities'},
+			{value: 6, text: 'Government'},
+			{value: 7, text: 'Retail'},
+			{value: 8, text: 'Automotive'}
+        ]
+        /*
+        //uncomment these lines to send data on server
+        ,pk: 1
+        ,url: '/post'
+        */
+    });
+   
+});
+$( document ).on( "click", ".add-another-risk", function() {
+  //make Project-Manager editable
+    $('.classriskIssue').editable({
+	    type: 'textarea',
+        title: 'Enter Risk Issue',
+        placement: 'right'
+	});
+	
+	//make Project-Manager editable
+    $('.classdatepicker').editable({
+	    type: 'date',
+        title: 'Enter Risk Issue',
+        placement: 'right'
+	});
+	
+	//make Project-Manager editable
+    $('.classselectBox').editable({
+	    type: 'select',
+        title: 'Select Status',
+        placement: 'right',
+		source: [
+            {value: 1, text: 'Closed'},
+            {value: 2, text: 'Open'}
+        ]
+	});
+});
+  </script>
+</head>
+
+<body ng-controller="PhoneListCtrl">
+    <header>
+        <div class="HeaderAbout">
+           <img src="images/ibm-logo-top.png" alt="ImageSlider"/>
+		</div>
+    </header>
+
+    <div class="container-fluid" id="DashBoardDetails">
+    
+        <div class="row containerMainRow">
+            <div class="col-sm-3" style="padding:0; margin:0 0 0 15px ;background-color: #dbecfe;">
+              <table>
+                <tr>
+                <td style="padding: 10px 10px 10px 0;">
+				<span id="LaunchDashboardSummaryButton"><i class="glyphicon glyphicon-chevron-left"></i></span>
+				<span class="heading-colorblue">Project Name: </span><span style="white-space:normal;"> {{phones.Name}}</span>
+				</td>
+                </tr>
+              </table>
+            </div>
+            
+			<div class="col-sm-9" style="float:right; width:73%">
+            <table width="100%">
+            <tr>
+			<td style="padding: 10px 150px 10px 20px; color:#1a5d94">Scope & Stage:</td>
+			<td class="box-Container">
+			 <div class="box-Container-Heading">Consulting/POC</div>
+			 <div class="box-Content" data-type="select" data-placement="right" data-title="Enter Sector">{{phones.projectStage.Consulting}}</div>
+			</td>
+            <td class="box-Container">
+			 <div class="box-Container-Heading">Personalise/Design/Build</div>
+			 <div class="box-Content" data-type="select" data-placement="right" data-title="Enter Sector">{{phones.projectStage.Personalize}}</div>
+			</td>
+            <td class="box-Container">
+			 <div class="box-Container-Heading">Run/Operate</div>
+			 <div class="box-Content" data-type="select" data-placement="right" data-title="Enter Sector">{{phones.projectStage.Operation}}</div>
+			</td>
+            </tr>
+            </table>
+            </div>
+        </div>
+        
+        
+        <div class="SecondMainRow">
+		<div class="tab">
+		 <div class="top">Offering</div>
+		 <div class="bottom" id="offering" data-type="text" data-placement="right" data-title="Enter Offering">{{phones.projectInfo.Offering}}</div>
+		</div>
+		<div class="tab">
+		 <div class="top">Sector</div>
+		 <div class="bottom" id="sector" data-type="select" data-placement="right" data-title="Enter Sector">{{phones.projectInfo.Sector}}</div>
+		</div>
+		<div class="tab">
+		 <div class="top">Industry</div>
+		 <div class="bottom" id="industry" data-type="select" data-placement="right" data-title="Enter industry">{{phones.projectInfo.Industry}}</div>
+		</div>
+		<div class="tab">
+		 <div class="top">Brands Involved</div>
+		 <div class="bottom" id="Brands-Involved" data-type="text" data-placement="right" data-title="Enter Brands Involved">{{phones.projectInfo.Industry}}</div>
+		</div>
+		<div class="tab">
+		 <div class="top">Offering Alignment</div>
+		 <div class="bottom" id="Offering-Alignment" data-type="text" data-placement="right" data-title="Enter Brands Involved">{{phones.projectInfo.Industry}}</div>
+		</div>
+		<div class="tab">
+		 <div class="top">OP Model Alignment</div>
+		 <div class="bottom" id="OP-Model-Alignment" data-type="text" data-placement="right" data-title="Enter Brands Involved">{{phones.projectInfo.Industry}}</div>
+		</div>
+		<div class="tab" style="border-right: 1px solid #d1d1d1">
+		 <div class="top">Project Manager</div>
+		 <div class="bottom" id="Project-Manager" data-type="text" data-placement="right" data-title="Enter Brands Involved">{{phones.projectInfo.Industry}}</div>
+		</div>
+		</div>
+		<div class="col-sm-12" style="text-align:right; margin:0 0 10px 0;"><button class="edit-post-button" id="enable"></button></div>
+       
+            <div class="ThirdMainRow">
+			
+			 <div class="container-left">
+			  <div class="row-tab">
+			   <div class="left-tab">
+			    <div class="radio-group">
+				 <table width="50%">
+				 <thead>
+				 <td>R</td>
+				 <td>A</td>
+				 <td>G</td>
+				 </thead>
+				 <tbody>
+				 <td><input type="radio" name="stakeholders" value="R"></td>
+				 <td><input type="radio" name="stakeholders" value="A"></td>
+				 <td><input type="radio" name="stakeholders" value="G"></td>
+				 </tbody>
+				 </table>
+				</div>
+				 <div class="radio-heading">Stakeholders are</Br>Committed</div>
+			   </div>
+			   <div class="left-tab">
+			    <div class="radio-group">
+				 <table width="50%">
+				 <thead>
+				 <td>R</td>
+				 <td>A</td>
+				 <td>G</td>
+				 </thead>
+				 <tbody>
+				 <td><input type="radio" name="benefits" value="R"></td>
+				 <td><input type="radio" name="benefits" value="A"></td>
+				 <td><input type="radio" name="benefits" value="G"></td>
+				 </tbody>
+				 </table>
+				</div>
+				<div class="radio-heading">Business Benefits</Br>are Realized</div>
+			   </div>
+			  </div>
+			  <div class="row-tab">
+			   <div class="left-tab">
+			    <div class="radio-group">
+				 <table width="50%">
+				 <thead>
+				 <td>R</td>
+				 <td>A</td>
+				 <td>G</td>
+				 </thead>
+				 <tbody>
+				 <td><input type="radio" name="managed" value="R"></td>
+				 <td><input type="radio" name="managed" value="A"></td>
+				 <td><input type="radio" name="managed" value="G"></td>
+				 </tbody>
+				 </table>
+				</div>
+				 <div class="radio-heading">Managed</div>
+			   </div>
+			   <div class="left-tab">
+			    <div class="radio-group">
+				 <table width="50%">
+				 <thead>
+				 <td>R</td>
+				 <td>A</td>
+				 <td>G</td>
+				 </thead>
+				 <tbody>
+				 <td><input type="radio" name="risk" value="R"></td>
+				 <td><input type="radio" name="risk" value="A"></td>
+				 <td><input type="radio" name="risk" value="G"></td>
+				 </tbody>
+				 </table>
+				</div>
+				<div class="radio-heading">Risk</div>
+			   </div>
+			  </div>
+			  <div class="row-tab">
+			   <div class="left-tab">
+			    <div class="radio-group">
+				 <table width="50%">
+				 <thead>
+				 <td>R</td>
+				 <td>A</td>
+				 <td>G</td>
+				 </thead>
+				 <tbody>
+				 <td><input type="radio" name="organization" value="R"></td>
+				 <td><input type="radio" name="organization" value="A"></td>
+				 <td><input type="radio" name="organization" value="G"></td>
+				 </tbody>
+				 </table>
+				</div>
+				 <div class="radio-heading">Organization</br>Benefit</div>
+			   </div>
+			   <div class="left-tab">
+			    <div class="radio-group">
+				 <table width="50%">
+				 <thead>
+				 <td>R</td>
+				 <td>A</td>
+				 <td>G</td>
+				 </thead>
+				 <tbody>
+				 <td><input type="radio" name="overall" value="R"></td>
+				 <td><input type="radio" name="overall" value="A"></td>
+				 <td><input type="radio" name="overall" value="G"></td>
+				 </tbody>
+				 </table>
+				</div>
+				<div class="radio-heading">Overall</br>Task</div>
+			   </div>
+			  </div>
+			 </div>
+			 
+			 
+			 <div class="container-right">
+			  <div class="first-column">
+			   <div class="heading-Div">7 Keys</div>
+			   <div>Stakeholders are Committed</div>
+			   <div>Business Benefits are being realized</div>
+			   <div>Work & Schedule are Predictable</div>
+			   <div>High Performing Team</div>
+			   <div>Scope is Realistic & Managed</div>
+			   <div>Risks are being Mitigated</div>
+			   <div style="border-bottom:none;">Organization Benefit is being realized</div>
+			  </div>
+			  <div class="second-column">
+			   <div class="heading-Div">Comments</div>
+			   <div></div>
+			   <div></div>
+			   <div></div>
+			   <div></div>
+			   <div></div>
+			   <div></div>
+			   <div style="border-bottom:none;"></div>
+			  </div>
+			  <div class="third-column">
+			   <div class="heading-Div">Forecast</div>
+			   <div>
+			    <table width="50%">
+				 <thead>
+				 <td>R</td>
+				 <td>A</td>
+				 <td>G</td>
+				 </thead>
+				 <tbody>
+				 <td><input type="radio" name="stake holders committed" value="R"></td>
+				 <td><input type="radio" name="stake holders committed" value="A"></td>
+				 <td><input type="radio" name="stake holders committed" value="G"></td>
+				 </tbody>
+				 </table>
+			    </div>
+				<div>
+			    <table width="50%">
+				 <thead>
+				 <td>R</td>
+				 <td>A</td>
+				 <td>G</td>
+				 </thead>
+				 <tbody>
+				 <td><input type="radio" name="Business Benefits are being realized" value="R"></td>
+				 <td><input type="radio" name="Business Benefits are being realized" value="A"></td>
+				 <td><input type="radio" name="Business Benefits are being realized" value="G"></td>
+				 </tbody>
+				 </table>
+			    </div>
+				<div>
+			    <table width="50%">
+				 <thead>
+				 <td>R</td>
+				 <td>A</td>
+				 <td>G</td>
+				 </thead>
+				 <tbody>
+				 <td><input type="radio" name="Work & Schedule are Predictable" value="R"></td>
+				 <td><input type="radio" name="Work & Schedule are Predictable" value="A"></td>
+				 <td><input type="radio" name="Work & Schedule are Predictable" value="G"></td>
+				 </tbody>
+				 </table>
+			    </div>
+				<div>
+			    <table width="50%">
+				 <thead>
+				 <td>R</td>
+				 <td>A</td>
+				 <td>G</td>
+				 </thead>
+				 <tbody>
+				 <td><input type="radio" name="High Performing Team" value="R"></td>
+				 <td><input type="radio" name="High Performing Team" value="A"></td>
+				 <td><input type="radio" name="High Performing Team" value="G"></td>
+				 </tbody>
+				 </table>
+			    </div>
+				<div>
+			    <table width="50%">
+				 <thead>
+				 <td>R</td>
+				 <td>A</td>
+				 <td>G</td>
+				 </thead>
+				 <tbody>
+				 <td><input type="radio" name="Scope is Realistic & Managed" value="R"></td>
+				 <td><input type="radio" name="Scope is Realistic & Managed" value="A"></td>
+				 <td><input type="radio" name="Scope is Realistic & Managed" value="G"></td>
+				 </tbody>
+				 </table>
+			    </div>
+				<div>
+			    <table width="50%">
+				 <thead>
+				 <td>R</td>
+				 <td>A</td>
+				 <td>G</td>
+				 </thead>
+				 <tbody>
+				 <td><input type="radio" name="Risks are being Mitigated" value="R"></td>
+				 <td><input type="radio" name="Risks are being Mitigated" value="A"></td>
+				 <td><input type="radio" name="Risks are being Mitigated" value="G"></td>
+				 </tbody>
+				 </table>
+			    </div>
+				<div style="border-bottom:none;">
+			    <table width="50%">
+				 <thead>
+				 <td>R</td>
+				 <td>A</td>
+				 <td>G</td>
+				 </thead>
+				 <tbody>
+				 <td><input type="radio" name="Organization Benefit is being realized" value="R"></td>
+				 <td><input type="radio" name="Organization Benefit is being realized" value="A"></td>
+				 <td><input type="radio" name="Organization Benefit is being realized" value="G"></td>
+				 </tbody>
+				 </table>
+			    </div>
+			  </div>
+			 </div>
+			
+			</div>
+
+            <div class="FourthMainRow">
+              <div class="left-Div">
+			   <div class="heading-Div">KPIs</div>
+			   <div class="left-tab">
+			    <div class="radio-group">
+				 <table width="50%">
+				 <thead>
+				 <td>R</td>
+				 <td>A</td>
+				 <td>G</td>
+				 </thead>
+				 <tbody>
+				 <td><input type="radio" name="cost" value="R"></td>
+				 <td><input type="radio" name="cost" value="A"></td>
+				 <td><input type="radio" name="cost" value="G"></td>
+				 </tbody>
+				 </table>
+				</div>
+				 <div class="radio-heading">Cost</div>
+			   </div>
+			   <div class="left-tab">
+			    <div class="radio-group">
+				 <table width="50%">
+				 <thead>
+				 <td>R</td>
+				 <td>A</td>
+				 <td>G</td>
+				 </thead>
+				 <tbody>
+				 <td><input type="radio" name="Schedule" value="R"></td>
+				 <td><input type="radio" name="Schedule" value="A"></td>
+				 <td><input type="radio" name="Schedule" value="G"></td>
+				 </tbody>
+				 </table>
+				</div>
+				 <div class="radio-heading">Schedule</div>
+			   </div>
+			   <div class="left-tab">
+			    <div class="radio-group">
+				 <table width="50%">
+				 <thead>
+				 <td>R</td>
+				 <td>A</td>
+				 <td>G</td>
+				 </thead>
+				 <tbody>
+				 <td><input type="radio" name="Quality" value="R"></td>
+				 <td><input type="radio" name="Quality" value="A"></td>
+				 <td><input type="radio" name="Quality" value="G"></td>
+				 </tbody>
+				 </table>
+				</div>
+				 <div class="radio-heading">Quality</div>
+			   </div>
+			  </div>
+			  <div class="right-Div">
+			   <div class="heading-Div">Comments</div>
+			   <div class="editable-Div"><a href="#" class="Comments-Update" data-type="text" data-placement="right" data-title="Enter Comments"></a></div>
+			   <div class="editable-Div"><a href="#" class="Comments-Update" data-type="text" data-placement="right" data-title="Enter Comments"></a></div>
+			   <div class="editable-Div"><a href="#" class="Comments-Update" data-type="text" data-placement="right" data-title="Enter Comments"></a></div>
+			  </div>
+            </div>
+			<div class="col-sm-12" style="text-align:left; color:#1a5d94; font-size:15px; font-weight:bold; margin:10px 0 10px 0;">Key Risks/Issues</div>
+			
+			
+<script>
+function addRowToTable()
+{
+  var tbl = document.getElementById('tblKeyRiskIssue');
+  var lastRow = tbl.rows.length;
+  // if there's no header row in the table, then iteration = lastRow + 1
+  var iteration = lastRow;
+  var row = tbl.insertRow(lastRow);
+  
+  // No. cell
+  var numberCell = row.insertCell(0);
+  var textNode = document.createTextNode(iteration);
+  numberCell.appendChild(textNode);
+  
+  // Risk/Issue cell
+  var textBoxRiskCell = row.insertCell(1);
+  var testInputRisk = document.createElement('a');
+  testInputRisk.className = 'classriskIssue';
+  testInputRisk.name = 'txtRow' + iteration;
+  testInputRisk.id = 'txtRow' + iteration;
+  textBoxRiskCell.appendChild(testInputRisk);
+  
+  // Mitigation cell
+  var textBoxMitigationCell = row.insertCell(2);
+  var testInputMitigation = document.createElement('a');
+  testInputMitigation.className = 'classriskIssue';
+  testInputMitigation.name = 'txt2Row' + iteration;
+  testInputMitigation.id = 'txt2Row' + iteration;
+  textBoxMitigationCell.appendChild(testInputMitigation);
+  
+  // Resp cell
+  var textBoxRespCell = row.insertCell(3);
+  var testInputResp = document.createElement('a');
+  testInputResp.className = 'classriskIssue';
+  testInputResp.name = 'txt3Row' + iteration;
+  testInputResp.id = 'txt3Row' + iteration;
+  textBoxRespCell.appendChild(testInputResp);
+  
+  // Date cell
+  var textBoxDateCell = row.insertCell(4);
+  var testInputDate = document.createElement('a');
+  testInputDate.className = 'classdatepicker';
+  testInputDate.name = 'DateRow' + iteration;
+  testInputDate.id = 'DateRow' + iteration;
+  
+  testInputDate.onkeypress = keyPressTest;
+  textBoxDateCell.appendChild(testInputDate);
+  
+  // select cell
+  var selectRow = row.insertCell(5);
+  var sel = document.createElement('a');
+  sel.className = 'classselectBox';
+  sel.name = 'selRow' + iteration;
+  sel.id = 'SelRow' + iteration;
+  selectRow.appendChild(sel);
+}
+function keyPressTest(e, obj)
+{
+  var validateChkb = document.getElementById('chkValidateOnKeyPress');
+  if (validateChkb.checked) {
+    var displayObj = document.getElementById('spanOutput');
+    var key;
+    if(window.event) {
+      key = window.event.keyCode; 
+    }
+    else if(e.which) {
+      key = e.which;
+    }
+    var objId;
+    if (obj != null) {
+      objId = obj.id;
+    } else {
+      objId = this.id;
+    }
+    displayObj.innerHTML = objId + ' : ' + String.fromCharCode(key);
+  }
+}
+function removeRowFromTable()
+{
+  var tbl = document.getElementById('tblKeyRiskIssue');
+  var lastRow = tbl.rows.length;
+  if (lastRow > 2) tbl.deleteRow(lastRow - 1);
+}
+</script>
+			<form method="get">
+			<div class="FifthMainRow">
+			 <table width="100%" id="tblKeyRiskIssue">
+			  <tr>
+              <th>No.</th>
+			  <th>Risk/Issue</th>
+			  <th>Mitigation</th>
+			  <th>Resp</th>
+			  <th>Date</th>
+			  <th>Status</th>
+              </tr>
+              <tr>
+               <td>1</td> 
+	           <td>
+	            <a href="#" class="classriskIssue" name="txtRow1" id="txtRow1"></a>
+			   </td>
+			   <td>
+	            <a href="#" class="classriskIssue" name="txt2Row1" id="txt2Row1"></a>
+			   </td>
+			   <td>
+	            <a href="#" class="classriskIssue" name="txt3Row1" id="txt3Row1"></a>
+			   </td>
+			   <td>
+	            <a href="#" class="classdatepicker" name="DateRow1" id="DateRow1"></a>
+			   </td>
+               <td>
+               <a href="#" class="classselectBox" name="selRow0" id="SelRow0"></a>
+               </td>
+              </tr>
+             </table>
+			</div>
+			<div class="col-sm-12" style="text-align:right; margin:0 0 10px 0; padding-right:0;">
+			<button class="add-another-risk" value="Add" id="add-risk" onclick="addRowToTable();"></button>&nbsp;
+			<button value="Remove" onclick="removeRowFromTable();">Remove</button>
+			</div>
+			</form>
+			<div class="col-sm-12" style="text-align:right; margin:40px 0 20px 0; padding-right:0;">
+			 <span><button class="preview-button" id="Preview-Button"></button></span>
+			 <span><button class="submit-button" id="Submit-Button"></button></span>
+			 <span><button class="cancel-button" id="Cancel-Button"></button></span>
+			</div>
+
+    </div>
+
+    <footer>
+        <section class="FooterSection">
+            <img src="images/ibm-logo-bottom.png" alt="Footer" class="FooterImage"/>
+        </section>
+    </footer>
+</body>
+</html>
+

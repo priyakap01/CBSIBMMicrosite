@@ -1,0 +1,122 @@
+angular.module('TechathonApp').controller('LoginController', function($scope, $rootScope, $http, $location, AUTH_EVENTS, AuthService, SwitchRoleService) {
+
+	$scope.init = function(){
+		$rootScope.user = {};
+		$rootScope.control = {};
+		$rootScope.role = undefined;
+		$rootScope.$broadcast(AUTH_EVENTS.logoutSuccess);
+		$rootScope.authenticated = false;
+	};
+
+	// Hard coded for fast login
+	$scope.user = {};//{email : 'brindasanth@in.ibm.com',password : '123'};
+
+	$rootScope.displayRoles = [];
+	$scope.error = undefined;
+
+	$scope.login = function() {
+		$scope.user = {
+				email: $scope.user.email,
+				password: $scope.user.password
+		};   
+		$scope.loginmessage = 'Sign-In Progress....';
+
+		AuthService.process({action : 'login'}, $scope.user, function(response){
+			if(response && response.user && response.user.id){
+				console.log('Got Authentication Response');
+				$rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
+				$rootScope.authenticated = true;
+				$rootScope.user = response.user;
+				$rootScope.control = response.control;
+				$rootScope.role = response.defaultRole;
+				$rootScope.displayRoles = response.displayRoles;
+				$rootScope.teamId = response.teamId;
+				$rootScope.invitationCount = response.invitationCount;
+				$location.url(response.view);
+			}
+		}, function(error){
+			$scope.error = error.data.message;
+			$rootScope.$broadcast(AUTH_EVENTS.loginFailed);
+		});
+		$scope.loginmessage = undefined;
+	};
+
+	$rootScope.logout = function() {
+		$scope.user = {
+				id: $rootScope.user.id,
+				token : $rootScope.user.token
+		};   
+
+		AuthService.process({action : 'logout'}, $scope.user, function(response){
+			if(response){
+				console.log('Successfully Logged out');
+				$rootScope.user = {};
+				$rootScope.$broadcast(AUTH_EVENTS.logoutSuccess);
+				$rootScope.authenticated = false;
+				$location.url('/home');
+			}
+		}, function(error){
+			$scope.error = error.data.message;
+			console.log('Failed in log-out');
+		});
+
+	};
+
+	$rootScope.switchRole = function(role){
+		if(role){
+			console.log('Switching to'+ role +'Role');
+			if($rootScope.role == role){
+				console.log('Already in the Same Role');
+			}else{
+				$rootScope.user.defaultRole = role;
+				console.log('Requesting Switch Service');
+				SwitchRoleService.process({}, $rootScope.user, function(response){
+					if(response && response.defaultRole && response.view){
+						$rootScope.role = response.defaultRole;
+						$rootScope.teamId = response.teamId;
+						$rootScope.invitationCount = response.invitationCount;
+						$location.url(response.view);
+					}
+				}, function(error){
+					console.log('Failed to switch User !');
+				});
+			};
+		};
+	};
+
+	/*
+	$rootScope.switchRole = function(role){
+		if(role){
+			if($rootScope.role == role){
+				console.log('Already in the Same Role');
+			}else{
+				$rootScope.role = role;
+				$location.url('/inbox/'+role);
+			}
+		};
+
+	};
+	 */
+
+});
+
+angular.module('TechathonApp').controller('LogoutController', function($scope, $rootScope, $http, $location, AUTH_EVENTS, AuthService) {
+	$scope.user = {};
+	$rootScope.logout = function() {
+		$scope.user = {
+				email: $scope.user.email,
+		};   
+
+		AuthService.process({action : 'logout'}, $scope.user, function(response){
+			if(response){
+				console.log('Successfully Logged out');
+				$rootScope.user = {};
+				$rootScope.$broadcast(AUTH_EVENTS.logoutSuccess);
+				$rootScope.authenticated = false;
+				$location.url('/home');
+			}
+		}, function(error){
+			console.log('Failed in log-out');
+		});
+
+	};

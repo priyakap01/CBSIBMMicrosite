@@ -1,0 +1,20 @@
+.HeaderAbout{
+    background-color: #000;
+    color: #fff;
+    height: 40px;
+}
+.SupplypageHeader{
+	text-align: center;
+}
+.container{
+    text-align: center;
+}
+.FooterSection {
+    background: #111111;
+    height: 69px;
+}
+ .FooterImage{
+     float: right;
+ }
+
+

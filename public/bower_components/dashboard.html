@@ -1,0 +1,560 @@
+
+
+<html lang="en" ng-app="phonecatApp"><head>
+
+        <meta charset="utf-8">
+        <title>CBS Dashboard</title>
+	    <script src="bower_components/angular/angular.js"></script>
+        <script src="js/controllers/controllers.js"></script>
+
+    <style>
+
+        table{
+
+            width: 100%;
+
+              border: 1px solid black;
+
+        }
+
+       
+
+    </style></head>
+
+    
+
+    <body ng-controller="PhoneListCtrl">
+
+        
+
+        <table style="
+
+    border: none;
+
+">
+
+            <tbody><tr>
+
+                <td style="
+
+    width: 70%;
+
+">
+
+                    <table style="
+
+    border: none;
+
+">
+
+                        <tbody><tr>
+
+                            <td>
+
+                                Project Name: {{phones[0].Name}}
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+
+                                Date : {{phones[0].date}}
+
+                            </td>
+
+                       </tr>
+
+ 
+
+                    </tbody></table>
+
+                </td>
+
+                <td>
+
+                    <table style="
+
+    border: none;
+
+    background: #cccccc;
+
+">
+
+                        <tbody><tr>
+
+                        <td>Project Scope and Stage</td>
+
+                        </tr>
+
+                        <tr>
+
+                        <td>
+
+                        Cosulting /Poc :{{phones[0].projectStage.Consulting}}
+
+                        </td></tr>
+
+                        <tr>
+
+                        <td >
+
+                        Peronalize/design/Build : {{phones[0].projectStage.Personalize}}
+
+                        </td>
+
+                        </tr>
+
+                        <tr>
+
+                        <td >
+
+                        Run/Operate  : {{phones[0].projectStage.Operation}}
+
+                        </td>
+
+                        </tr>
+
+                    </tbody></table>
+
+                </td>
+
+            </tr>
+
+        </tbody></table>
+
+        <table style="
+
+    /* border: none; */
+
+">
+
+            <tbody><tr style="
+
+    background: #d5d5d5;
+
+">
+
+                <td>Offering</td>
+
+                <td>Sector</td>
+
+                <td>Industry</td>
+
+                <td>Brands involved</td>
+
+                <td>Offering Alignments</td>
+
+                <td>Op Model Alignments</td>
+
+                <td>GIC Pm</td>
+
+            </tr>
+
+            <tr>
+
+               <td>{{phones[0].projectInfo.Offering}}</td>
+                 <td>{{phones[0].projectInfo.Sector}}</td>
+               <td>{{phones[0].projectInfo.Industry}}</td>
+               
+			   <td>{{phones[0].projectInfo.Brands_Involved}}</td>
+
+               <td>{{phones[0].projectInfo.Offering_alignment}}</td>
+
+              <td>{{phones[0].projectInfo.Op_model_alignment}}</td>
+
+                <td>{{phones[0].projectInfo.GIC_PM}}</td>
+
+               
+
+            </tr>
+
+        
+
+        </tbody></table>
+
+ 
+
+ 
+
+        <table style="
+
+    margin-top: 10px;
+
+">
+
+            <tbody><tr>
+
+                <td style="width: 50%">
+
+                    <table style="
+
+    background: #d5d5d5;
+
+    border: none;
+
+">
+
+                        <tbody><tr>
+
+                            <td>StakeHolders are commited
+
+                            </td>
+
+                            <td>Business benefits are realized
+
+                            </td>
+
+                            <td>Work &amp; Schedule
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>High Performing team
+
+                            </td>
+
+                            <td>Scope Managed
+
+                            </td>
+
+                            <td>Risks
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Organization Benefits
+
+                            </td>
+
+                            <td colspan="2">Overall Status
+
+                            </td>
+
+                        </tr>
+
+                    </tbody></table>
+
+                </td>
+
+                <td rowspan="2">
+
+                    <table>
+
+                        <tbody><tr style="
+
+    background: #d5d5d5;
+
+">
+
+                            <td>7 Keys</td>
+
+                            <td>Reasons if Amber or Red</td>
+
+                            <td>Forecast for Next period</td>
+
+                            <td> Go to Green Plan (as 
+
+
+applicable)</td> 
+
+                        </tr>
+
+ 
+
+                        <tr>
+
+                            <td style="
+
+    background: #d5d5d5;
+
+">Stakeholders are commited</td>
+
+                            <td></td>
+
+                            <td style="
+
+    background: red;
+
+"></td>
+
+                            <td></td>
+
+                        </tr>
+
+ 
+
+                        <tr>
+
+                            <td style="
+
+    background: #d5d5d5;
+
+">Business benefits are being realized</td>
+
+                            <td></td>
+
+                            <td style="
+
+    background: orange;
+
+"></td>
+
+                            <td></td>
+
+                        </tr>
+
+ 
+
+                        <tr>
+
+                            <td style="
+
+    background: #d5d5d5;
+
+">Work &amp; schedule is predictable</td>
+
+                            <td></td>
+
+                            <td style="
+
+    background: greenyellow;
+
+"></td>
+
+                            <td></td>
+
+                        </tr>
+
+ 
+
+                        <tr>
+
+                            <td style="
+
+    background: #d5d5d5;
+
+">Help performing team</td>
+
+                            <td></td>
+
+                            <td style="
+
+    background: orange;
+
+"></td>
+
+                            <td></td>
+
+                        </tr>
+
+ 
+
+                        <tr>
+
+                            <td style="
+
+    background: #d5d5d5;
+
+">Scope is realistic and managed</td>
+
+                            <td></td>
+
+                            <td style="
+
+    background: orange;
+
+"></td>
+
+                            <td></td>
+
+                        </tr>
+
+ 
+
+                        <tr>
+
+                            <td style="
+
+    background: #d5d5d5;
+
+">Risks are being mitigated</td>
+
+                            <td></td>
+
+                            <td style="
+
+    background: red;
+
+"></td>
+
+                            <td></td>
+
+                        </tr>
+
+ 
+
+                        <tr>
+
+                            <td style="
+
+    background: #d5d5d5;
+
+">Oranization benefits are being realized</td>
+
+                            <td></td>
+
+                            <td style="
+
+    background: greenyellow;
+
+"></td>
+
+                           <td></td>
+
+                        </tr>
+
+                    </tbody></table>
+
+                </td>
+
+            </tr>
+
+ 
+
+            <tr>
+
+                <td style="width: 50%">
+
+                    <table style="
+
+    border: none;
+
+   background: #d5d5d5;
+
+">
+
+                        <tbody><tr>
+
+                            <td>KPIs
+
+                            </td>
+
+                            <td>Reason for Red/Amber With actions
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td style="
+
+    background: red;
+
+">Cost</td>
+
+                            <td>{{phones[0].projectKpi.Cost}}</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td style="
+
+    background: orange;
+
+">Schedule</td>
+
+                            <td>{{phones[0].projectKpi.Schedule}}</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td style="
+
+    background: greenyellow;
+
+">Quality</td>
+
+                            <td>{{phones[0].projectKpi.Quality}}</td>
+
+                        </tr>
+
+                    </tbody></table>
+
+                </td>
+
+            </tr>
+
+        </tbody></table>
+
+ 
+
+        <table>
+
+            <caption>Top Five Risks /Issues</caption>
+
+            <tbody><tr style="
+
+    background: #d5d5d5;
+
+">
+
+                <td>#</td>
+
+                <td>Risk/issue</td>
+
+                <td>Mitigation</td>
+
+                <td>Resp.</td>
+
+                <td>Date</td>
+
+                <td>Status</td>
+
+            </tr>
+
+ 
+
+            <tr>
+
+                <td style="
+
+    /* border: 1px solid gray; */
+
+">{{$index+1}}</td>
+
+                <td>{{phones[0].projectRisk.Risk_Issue}}</td>
+
+                <td>{{phones[0].projectRisk.Mitigation}}</td>
+
+                <td>{{phones[0].projectRisk.Resp}}</td>
+
+                <td>{{phones[0].projectRisk.Dated}}</td>
+
+                <td>{{phones[0].projectRisk.Status}}</td>
+
+            </tr>
+
+ 
+
+          
+
+        </tbody></table>
+
+    
+
+ 
+
+</body></html>
+

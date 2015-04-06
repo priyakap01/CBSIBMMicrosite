@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app = "phonecatApp">
+<head>
+  <title>Offerings</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="CustomCss/AboutCustom.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="slick/slick.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers/Productioncontrollers.js"></script>
+  <link href="CustomCss/OfferingCustom.css" rel="stylesheet" media="screen">
+ 
+</head>
+<body>
+<div class="loading">
+    <img src="../images/loading.gif" />
+</div>
+    <header>
+        <div class="HeaderAbout">
+           <img src="images/ibm-logo-top.png" alt="ImageSlider"/>
+        </div>
+    
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+        <div class="ibmcloudLogo">
+      <a href="#"><img src="images/IBM-CBS-Logo.svg" /></a>
+            </div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="about.html" id="AboutLink">About</a></li>
+        <li><a href="Offerings.html" id="OfferingsLink">Solutions</a></li>
+        <li><a href="Services.html" id="ServicesLink">Services</a></li>
+        <li><a href="stories.html" id="StoriesLink">Client Stories</a></li>
+		<li><a href="dashboardsummary.html" id="DashboardLink">Dashboard</a>
+		 <ul>
+		 <li><a href="dashboardpipeline.html">Pipeline</a></li>
+		 <li><a href="dashboardwin.html">Wins</a></li>
+		 <li><a href="dashboard.html">Delivery</a></li>
+		 </ul>
+		</li>
+        <li><a href="news.html" id="NewsLink">News</a></li>
+        <li><a href="FAQ.html" id="FAQLink">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  </header>
+    <div class="ImageSlider" style="margin:0 !important;">
+	  <div>
+          <img class="SlidingImage" src="images/cbs-banner2.jpg" alt="ImageSlider"/>
+      </div>
+    </div>
+
+    
+    <section class="ArticleHolder">
+        Offerings based on cross-industry patterns, tailored to specific industry<br>use cases combining the scale, speed and ease of cloud
+    </section>
+
+    <section class="HorizontalDivider">
+        &nbsp
+    </section>
+
+    <div class="row row-list OfferingCustomeRow" style="margin:0 !important; padding:0 16px 0 0;">
+
+        <div class="col-xs-6" style="width:40%; padding-top:10px" id="OfferingContents">
+           <div style="width:100%; float:left; height:auto">
+			<!-- Marketing Section -->
+			<div style="height:340px; width:48%; margin:5px; float:left; background-color:#008ac1;" ng-controller="offmarketingCtrl">
+			 <div class="portfolio-boxes" style="border:2px solid #008ac1">
+			 <p style="color:#008ac1">{{mar[0].Heading}}</p>
+			 </div>
+			 <span ng-repeat="x in mar" on-finish-render>
+			 <div class="tab-menu-item tab-menu-item-blue" target="{{$index+1}}">{{x.Subheading}}</div>
+			 </span>
+			</div>
+			
+			
+			<!-- Operations Section -->
+			<div style="height:340px; width:48%; margin:5px; float:left; background-color:#a2d14f;" ng-controller="offoperationCtrl">
+			 <div class="portfolio-boxes" style="border:2px solid #a2d14f">
+			 <p style="color:#a2d14f">{{op[0].Heading}}</p>
+			 </div>
+			 <span ng-repeat="x in op" on-finish-render>
+			 <div class="tab-menu-item tab-menu-item-lime" target="{{$index+7}}">{{x.Subheading}}</div>
+             </span>
+			</div>
+		   </div>
+		   
+		   <div style="width:100%; float:left; height:auto">
+			<!-- Finance Section -->
+			<div style="height:200px; width:48%; margin:5px; float:left; background-color:#e28049;" ng-controller="offfinanceCtrl">
+			 <div class="portfolio-boxes" style="border:2px solid #e28049">
+			 <p style="color:#e28049">{{fin[0].Heading}}</p>
+			 </div>
+			 <span ng-repeat="x in fin" on-finish-render>
+			 <div class="tab-menu-item tab-menu-item-pink" target="{{$index+15}}">{{x.Subheading}}</div>
+			 </span>
+			</div>
+			
+			
+			<!-- HR Section -->
+			<div style="height:200px; width:48%; margin:5px; float:left; background-color:#ff9f00;" ng-controller="offhrCtrl">
+			 <div class="portfolio-boxes" style="border:2px solid #ff9f00">
+			 <p style="color:#ff9f00">{{hr[0].Heading}}</p>
+			 </div>
+			 <span ng-repeat="x in hr" on-finish-render>
+			 <div class="tab-menu-item tab-menu-item-orange" target="{{$index+19}}">{{x.Subheading}}</div>
+		     </span>
+			</div>
+           </div>
+          
+        </div>
+        
+		<!-- Marketing Content Starts-->
+		<span ng-controller="offmarketingCtrl">
+		<span ng-repeat="z in mar">
+        <div class="col-xs-6 targetDiv" id="{{div[$index]}}">
+		   <div class="Heading-container">
+		   <div class="Image-container"><img src="{{z.Logo}}"/></div>
+		   <div class="Heading-Title-container">
+		   <div class="Main-Heading-container">
+				   {{z.Subheading}}				   
+			</div>
+	   		<div class="Sub-Heading-container">
+				   {{z.SubheadingText}}
+			</div>
+           </div>			
+		   </div>
+           <div class="offering-container">
+		    <div id="cssmenu">
+			 <ul>
+			  <li class="active-class active1"><a class="link-tab1" href="#new">{{z.Tab1.Name}}</a></li>
+			  <li><a class="link-tab2" href="#key">{{z.Tab2.Name}}</a></li>
+			  <li style="padding:0 25px 0 25px;"><a class="link-tab3" href="#client">{{z.Tab3.Name}}</a></li>
+			  <li style="padding:0 30px 0 30px;"><a class="link-tab4" href="#proof" >{{z.Tab4.Name}}</a></li>
+			  <li style="padding:0 30px 0 30px;"><a class="link-tab5" href="#Contacts">{{z.Tab5.Name}}</a></li>
+			 </ul>
+			</div>
+			
+			<div class="content-section content1" style="display:block;">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab1.Lines">
+			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 </ul>
+			</div>
+			
+			<div class="content-section content2">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab2.Lines">
+			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 </ul>
+			</div>
+			
+			<div class="content-section content3">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab3.Lines">
+			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 </ul>
+			</div>
+			
+			<div class="content-section content4">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab4.Lines">
+			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 </ul>
+			</div>
+		   </div>
+        </div>
+		<!-- Marketing Content Ends -->
+		</span>
+		</span>
+		
+		<!-- Operations Content Starts-->
+		<span ng-controller="offoperationCtrl">
+		<span ng-repeat="z in op">
+        <div class="col-xs-6 targetDiv" id="{{div[$index+6]}}">
+		   <div class="Heading-container">
+		   <div class="Image-container"><img src="{{z.Logo}}"/></div>
+		   <div class="Heading-Title-container">
+		   <div class="Main-Heading-container">
+				   {{z.Subheading}}				   
+			</div>
+	   		<div class="Sub-Heading-container">
+				   {{z.SubheadingText}}
+			</div>
+           </div>			
+		   </div>
+           <div class="offering-container">
+		    <div id="cssmenu">
+			 <ul>
+			  <li class="active-class active1"><a class="link-tab1" href="#new">{{z.Tab1.Name}}</a></li>
+			  <li><a class="link-tab2" href="#key">{{z.Tab2.Name}}</a></li>
+			  <li style="padding:0 25px 0 25px;"><a class="link-tab3" href="#client">{{z.Tab3.Name}}</a></li>
+			  <li style="padding:0 30px 0 30px;"><a class="link-tab4" href="#proof" >{{z.Tab4.Name}}</a></li>
+			  <li style="padding:0 30px 0 30px;"><a class="link-tab5" href="#Contacts">{{z.Tab5.Name}}</a></li>
+			 </ul>
+			</div>
+			
+			<div id="active1" class="content-section content1" style="display:block;">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab1.Lines">
+			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 </ul>
+			</div>
+			
+			<div class="content-section content2">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab2.Lines">
+			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 </ul>
+			</div>
+			
+			<div class="content-section content3">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab3.Lines">
+			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 </ul>
+			</div>
+			
+			<div class="content-section content4">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab4.Lines">
+			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 </ul>
+			</div>
+		   </div>
+        </div>
+		</span>
+		</span>
+		<!-- Operations Content Ends -->
+		
+		<!-- Finance Content Starts-->
+		<span ng-controller="offfinanceCtrl">
+		<span ng-repeat="z in fin">
+        <div class="col-xs-6 targetDiv" id="{{div[$index+14]}}">
+		   <div class="Heading-container">
+		   <div class="Image-container"><img src="{{z.Logo}}"/></div>
+		   <div class="Heading-Title-container">
+		   <div class="Main-Heading-container">
+				   {{z.Subheading}}				   
+			</div>
+	   		<div class="Sub-Heading-container">
+				   {{z.SubheadingText}}
+			</div>
+           </div>			
+		   </div>
+           <div class="offering-container">
+		    <div id="cssmenu">
+			 <ul>
+			  <li class="active-class active1"><a class="link-tab1" href="#new">{{z.Tab1.Name}}</a></li>
+			  <li><a class="link-tab2" href="#key">{{z.Tab2.Name}}</a></li>
+			  <li style="padding:0 25px 0 25px;"><a class="link-tab3" href="#client">{{z.Tab3.Name}}</a></li>
+			  <li style="padding:0 30px 0 30px;"><a class="link-tab4" href="#proof" >{{z.Tab4.Name}}</a></li>
+			  <li style="padding:0 30px 0 30px;"><a class="link-tab5" href="#Contacts">{{z.Tab5.Name}}</a></li>
+			 </ul>
+			</div>
+			
+			<div class="content-section content1" style="display:block;">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab1.Lines">
+			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 </ul>
+			</div>
+			
+			<div class="content-section content2">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab2.Lines">
+			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 </ul>
+			</div>
+			
+			<div class="content-section content3">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab3.Lines">
+			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 </ul>
+			</div>
+			
+			<div class="content-section content4">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab4.Lines">
+			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 </ul>
+			</div>
+		   </div>
+        </div>
+		</span>
+		</span>
+		<!-- Finance Content Ends -->
+		
+		<!-- HR Content Starts-->
+		<span ng-controller="offhrCtrl">
+		<span ng-repeat="z in hr">
+        <div class="col-xs-6 targetDiv" id="{{div[$index+18]}}">
+		   <div class="Heading-container">
+		   <div class="Image-container"><img src="{{z.Logo}}"/></div>
+		   <div class="Heading-Title-container">
+		   <div class="Main-Heading-container">
+				   {{z.Subheading}}				   
+			</div>
+	   		<div class="Sub-Heading-container">
+				   {{z.SubheadingText}}
+			</div>
+           </div>			
+		   </div>
+           <div class="offering-container">
+		    <div id="cssmenu">
+			 <ul>
+			  <li class="active-class active1"><a class="link-tab1" href="#new">{{z.Tab1.Name}}</a></li>
+			  <li><a class="link-tab2" href="#key">{{z.Tab2.Name}}</a></li>
+			  <li style="padding:0 25px 0 25px;"><a class="link-tab3" href="#client">{{z.Tab3.Name}}</a></li>
+			  <li style="padding:0 30px 0 30px;"><a class="link-tab4" href="#proof" >{{z.Tab4.Name}}</a></li>
+			  <li style="padding:0 30px 0 30px;"><a class="link-tab5" href="#Contacts">{{z.Tab5.Name}}</a></li>
+			 </ul>
+			</div>
+			
+			<div class="content-section content1" style="display:block;">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab1.Lines">
+			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 </ul>
+			</div>
+			
+			<div class="content-section content2">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab2.Lines">
+			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 </ul>
+			</div>
+			
+			<div class="content-section content3">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab3.Lines">
+			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 </ul>
+			</div>
+			
+			<div class="content-section content4">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab4.Lines">
+			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 </ul>
+			</div>
+		   </div>
+        </div>
+		</span>
+		</span>
+		<!-- HR Content Ends -->
+
+    </div>
+       <footer>
+  <section class="FooterSection">
+        <img src="images/ibm-logo-bottom.png" alt="Footer" class="FooterImage"/>
+  </section>
+    </footer>
+</body>    
+</html>
+<script>
+    $(document).ready(function () {
+	
+	   $("#myNavbar").find("a").css("border", "none");
+            $('#OfferingsLink').attr('style', 'color: #000000 !important; font-weight: bold !important');
+            $("#OfferingsLink").css("border-bottom","2px solid #1a5d94");
+
+
+        $('.ImageSlider').slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    slidesToShow: 1
+                }
+            }
+          ]
+        });
+	
+	});
+    setTimeout(function(){$(document).ready(function () {
+
+		$(function(){
+		   jQuery('.targetDiv').hide();
+		   
+		   jQuery('#div1').show();
+		   
+		   $(".tab-menu-item").first().addClass("tab-menu-item-arrow");
+		   
+		   $('.tab-menu-item').click(function(){
+              $('.targetDiv').hide();
+              $('#div'+$(this).attr('target')).show();
+			  $('#cssmenu li').removeClass('active-class');
+		      $('li.active1').addClass("active-class");
+			  $('.content-section').hide();
+	          $('.content1').show();
+           });
+        });
+		
+		$('.tab-menu-item').click(function(e) {
+         e.preventDefault(); //prevent the link from being followed
+         $('.tab-menu-item').removeClass('tab-menu-item-arrow');
+         $(this).addClass('tab-menu-item-arrow');
+        });
+		
+		$('#cssmenu li').click(function(e) {
+         e.preventDefault(); //prevent the link from being followed
+         $('#cssmenu li').removeClass('active-class');
+         $(this).addClass('active-class');
+       });
+	   
+	   $('.content-section').hide();
+	   $('.content1').show();
+	   $(".link-tab1").click(function(e) {
+         e.preventDefault(); //prevent the link from being followed
+		 $('.content-section').hide();
+		 $('.content1').show();
+       });
+	   $(".link-tab2").click(function(e) {
+         e.preventDefault(); //prevent the link from being followed
+		 $('.content-section').hide();
+		 $('.content2').show();
+       });
+	   $(".link-tab3").click(function(e) {
+         e.preventDefault(); //prevent the link from being followed
+		 $('.content-section').hide();
+		 $('.content3').show();
+       });
+	   $(".link-tab4").click(function(e) {
+         e.preventDefault(); //prevent the link from being followed
+		 $('.content-section').hide();
+		 $('.content4').show();
+       });
+	 $(".loading").fadeOut("slow"); // loading DIV fades out
+    $(".content").fadeIn("slow"); // content DIV fades in
+	   
+    });},4500);
+</script>

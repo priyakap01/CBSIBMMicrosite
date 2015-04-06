@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  <title>Our People</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="CustomCss/AboutCustom.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="slick/slick.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers/Productioncontrollers.js"></script>
+  <link href="CustomCss/DashboardCustom.css" rel="stylesheet" media="screen">
+</head>
+<body ng-controller="bizzCtrl">
+    <header>
+        <div class="HeaderAbout">
+           <img src="Images/ibm-logo-top.png" alt="ImageSlider"/>
+        </div>
+    
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+        <div class="Heading">
+      <a class="navbar-brand" href="#">IBM <strong>Cloud / </strong><label class="NormalLabel">Business Solution</label></a>
+            </div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+       <li><a href="about.html" id="AboutLink">About</a></li>
+
+        <li><a href="Offerings.html" id="OfferingsLink">Offerings</a></li>
+
+        <li><a href="Solution.html" id="SolutionsLink">Solutions</a></li>
+
+        <li><a href="dashboard.html" id="DashboardLink">Dashboard</a></li>
+        <li><a href="people.html" id="OurTeamLink">Our Team</a></li>
+        <li><a href="Blog.html" id="BlogLink">Blog</a></li>
+        <li><a href="FAQ.html" id="FAQLink">FAQ</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+  </header>
+
+    <h1 class="DashboardHeader">
+        Our People
+    </h1>
+    <div class="container">
+    
+        
+        
+        
+         
+       
+        
+
+        <h3>Employee Details</h3>
+		
+    Filter your results:
+    <select ng-model="mi">
+    <option value="one">Emp_NotesID</option>
+    <option value="two">Project_Name</option>
+    <option value="three">Project_Start_Date</option>
+	<option value="four">Project_End_Date</option>
+	<option value="five">Show All</option>
+	
+    </select>
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table RightSideSecondTable" align="left">
+                    <thead>
+                        <tr class="RightSideSecondTableHeader">
+                            <th>#</th>
+                            <th>Emp_Code</th>
+                            <th>Emp_Name</th>
+                            <th ng-hide="mi=='two' || mi=='three' || mi=='four'" ng-show="mi=='one' || mi=='five'">Emp_NotesID</th>
+                            
+                            <th ng-hide="mi=='three' || mi=='one' || mi=='four'" ng-show="mi=='two' || mi=='five'">Project_Name</th>
+                            <th ng-hide="mi=='two' || mi=='one' || mi=='four'" ng-show="mi=='three' || mi=='five'">Project_Start_Date</th>
+                            <th ng-hide="mi=='two' || mi=='three' || mi=='one'" ng-show="mi=='four' || mi=='five'">Project_End_Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="phone in bizz">
+                <td>{{$index+1}}</td>
+                <td>{{phone.Emp_Code}}</td>
+                <td>{{phone.Emp_Name}}</td>
+                <td ng-hide="mi=='two' || mi=='three' || mi=='four'" ng-show="mi=='one' || mi=='five'">{{phone.Emp_NotesID}}</td>
+                <td ng-hide="mi=='three' || mi=='one' || mi=='four'" ng-show="mi=='two' || mi=='five'">{{phone.Project_Name}}</td>
+       
+                <td ng-hide="mi=='two' || mi=='one' || mi=='four'" ng-show="mi=='three' || mi=='five'">{{phone.Project_Start_Date}}</td>
+                <td ng-hide="mi=='two' || mi=='three' || mi=='one'" ng-show="mi=='four' || mi=='five'">{{phone.Project_End_Date}}</td>
+                        </tr>
+                        
+                       
+
+                    </tbody>
+                </table>
+            </div>
+
+           
+        </div>
+
+    </div>
+
+    <footer>
+        <section class="FooterSection">
+            <img src="Images/ibm-logo-bottom.png" alt="Footer" class="FooterImage"/>
+        </section>
+    </footer>
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+
+        $("#CloseDate").click(function () {
+            var EmptyDiv = "<label> &nbsp </label>";
+            $("#DateColumn").html(EmptyDiv);
+        });
+
+        $("#CloseScope").click(function () {
+            var EmptyDiv = "<label> &nbsp </label>";
+            $("#ScopeColumn").html(EmptyDiv);
+        });
+
+    });
+</script>

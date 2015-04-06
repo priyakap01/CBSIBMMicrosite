@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Solution</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="CustomCss/AboutCustom.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="slick/slick.min.js"></script>
+  <link href="CustomCss/SolutionCustom.css" rel="stylesheet" media="screen">
+</head>
+<body>
+    <header>
+        <div class="HeaderAbout">
+           <img src="images/ibm-logo-top.png" alt="ImageSlider"/>
+        </div>
+    
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+        <div class="ibmcloudLogo">
+      <a href="#"><img src="images/IBM-CBS-Logo.svg" /></a>
+            </div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="about.html" id="AboutLink">About</a></li>
+        <li><a href="Offerings.html" id="OfferingsLink">Solutions</a></li>
+        <li><a href="Services.html" id="ServicesLink">Services</a></li>
+        <li><a href="stories.html" id="StoriesLink">Client Stories</a></li>
+		<li><a href="dashboardsummary.html" id="DashboardLink">Dashboard</a>
+		 <ul>
+		 <li><a href="dashboardpipeline.html">Pipeline</a></li>
+		 <li><a href="dashboardwin.html">Wins</a></li>
+		 <li><a href="dashboard.html">Delivery</a></li>
+		 </ul>
+		</li>
+        <li><a href="News.html" id="NewsLink">News</a></li>
+        <li><a href="FAQ.html" id="FAQLink">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  </header>
+    <div class="ImageSlider">
+      <div>
+          <img class="SlidingImage" src="images/about-mainimg.jpg" alt="ImageSlider"/>
+          <section class="HorizontalDivider Thick"></section>
+      </div>
+      <div>
+          <img class="SlidingImage" src="images/about-mainimg.jpg" alt="ImageSlider"/>
+          <section class="HorizontalDivider Thick"></section>
+      </div>
+      <div>
+          <img class="SlidingImage" src="images/about-mainimg.jpg" alt="ImageSlider"/>
+          <section class="HorizontalDivider Thick"></section>
+      </div>
+    </div>
+
+    <h2 class="HeaderSolution">IBM Cloud Business Solutions</h2>
+    <div class="container WithBG">
+    <div class="container">
+        <section class="ArticleHolder">
+            <article>
+              
+                <h4 class="SubHeader">
+                    Providing the best of IBM as a Service with IBM Software and GBS insight delivered throught the cloud
+                </h4>
+            </article>
+        </section>
+        <section class="HorizontalDivider"></section>
+        <div class="row BoxList">
+            <div class="col-md-4">
+               <div class="row SpecialRow indigo"><h3>   Business Process Services </h3></div>
+               <h4>Business Process Manager on Cloud is a subscription-based business process manage-ment (BPM) cloud service. It offers visibility and management of business processes, low start up costs and fast return on investment. </h4>
+            </div>
+
+            <div class="col-md-4">
+               <div class="row SpecialRow Saffron"> <h3>Software Integration</h3></div>
+               <h4>Business Process Manager on Cloud is a subscription-based business process manage-ment (BPM) cloud service. It offers visibility and management of business processes, low start up costs and fast return on investment. </h4>
+            </div>
+
+            <div class="col-md-4">
+                <div class="row SpecialRow Green"><h3>Cloud Infrastructure</h3></div>
+               <h4>Business Process Manager on Cloud is a subscription-based business process manage-ment (BPM) cloud service. It offers visibility and management of business processes, low start up costs and fast return on investment. </h4>
+            </div>
+    
+        </div>
+
+        <div class="row BoxList">
+            <div class="col-md-4">
+               <div class="row SpecialRow Gray"><h3>Consulting Services/Implementation</h3></div>
+               <h4>Business Process Manager on Cloud is a subscription-based business process manage-ment (BPM) cloud service. It offers visibility and management of business processes, low start up costs and fast return on investment. </h4>
+            </div>
+
+            <div class="col-md-4">
+                <div class="row SpecialRow Red"><h3>Security, Monitoring, Managed Support</h3></div>
+               <h4>Business Process Manager on Cloud is a subscription-based business process manage-ment (BPM) cloud service. It offers visibility and management of business processes, low start up costs and fast return on investment. </h4>
+            </div>
+
+            <div class="col-md-4">
+               <div class="row SpecialRow Brown"> <h3>Industry Accelerators/ Assets/Frameworks</h3></div>
+               <h4>Business Process Manager on Cloud is a subscription-based business process manage-ment (BPM) cloud service. It offers visibility and management of business processes, low start up costs and fast return on investment. </h4>
+            </div>
+    
+        </div>
+
+    </div>
+
+   
+
+    </div>
+
+    
+
+    <footer>
+      <section class="FooterSection">
+            <img src="images/ibm-logo-bottom.png" alt="Footer" class="FooterImage"/>
+      </section>
+    </footer>
+</body>
+</html>
+
+<script>
+        $(document).ready(function(){
+
+             $("#myNavbar").find("a").css("border", "none");
+            $('#SolutionsLink').attr('style', 'color: #000000 !important');
+            $("#SolutionsLink").css("border-bottom","2px solid #1a5d94");
+
+	        $('.ImageSlider').slick({
+	            dots: true,
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows:true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                responsive: [
+                {
+                  breakpoint: 768,
+                  settings: {
+                    arrows: false,
+                    centerMode: true,
+                    slidesToShow: 1
+                  }
+                },
+                {
+                  breakpoint: 480,
+                  settings: {
+                    arrows: false,
+                    centerMode: true,
+                    slidesToShow: 1
+                  }
+                }
+              ]
+	        });
+
+        });
+</script>

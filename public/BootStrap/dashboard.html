@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  <title>Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="CustomCss/AboutCustom.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="slick/slick.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers/controllers.js"></script>
+  <link href="CustomCss/DashboardCustom.css" rel="stylesheet" media="screen">
+</head>
+<body ng-controller="PhoneListCtrl">
+    <header>
+        <div class="HeaderAbout">
+           <img src="Images/ibm-logo-top.png" alt="ImageSlider"/>
+        </div>
+    
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+        <div class="Heading">
+      <a class="navbar-brand" href="#">IBM <strong>Cloud / </strong><label class="NormalLabel">Business Solution</label></a>
+            </div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+       <li><a href="about.html" id="AboutLink">About</a></li>
+
+        <li><a href="Offerings.html" id="OfferingsLink">Offerings</a></li>
+
+        <li><a href="Solution.html" id="SolutionsLink">Solutions</a></li>
+
+        <li><a href="dashboard" id="DashboardLink">Dashboard</a></li>
+        <li><a href="Login.html" id="OurTeamLink">Our Team</a></li>
+        <li><a href="Blog.html" id="BlogLink">Blog</a></li>
+        <li><a href="FAQ.html" id="FAQLink">FAQ</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+  </header>
+
+    <h1 class="DashboardHeader">
+        DASHBOARD
+    </h1>
+    <div class="container">
+    
+        <div class="row containerMainRow">
+               <div class="col-sm-3" id="DateColumn">
+              <table class="table FirstTable">
+                        <thead>
+                          <tr class="FirstRow">
+                            <th class="HeaderFirst"><span class="glyphicon glyphicon-calendar"></span>  <label class="DateLabel"> Date:{{phones[0].date}} </label><label>&nbsp</label>  <span class="glyphicon glyphicon-remove rightSpan" id="CloseDate"></span></th>
+                          </tr>
+                        </thead>
+                        <tbody class="TableFirstBody">
+                          <tr class="ProjectNameRow">
+                            <td>Project Name : {{phones[0].Name}}</td>
+                          </tr>
+                        </tbody>
+              </table>
+
+
+
+               </div>
+               <div class="col-sm-3">
+                     
+               </div>
+               <div class="col-sm-3">
+                  
+               </div>
+               <div class="col-sm-3" id="ScopeColumn">
+                    <table class="table FirstTable">
+                        <thead>
+                          <tr class="FirstRow">
+                             <th class="HeaderFirst"><span class="glyphicon glyphicon-calendar"></span>  <label class="DateLabel"> Project Scope & Stage </label><label>&nbsp</label>  <span class="glyphicon glyphicon-remove rightSpan" id="CloseScope"></span></th>
+                          </tr>
+                        </thead>
+                        <tbody class="TableFirstBody">
+                          <tr>
+                            <td><label class="">Consulting/POC</label> <strong class="InputBox">{{phones[0].projectStage.Consulting}}</strong>
+
+                        <tr>
+                            <td><label class="">Personalise/Design/Build</label>   <strong class="InputBox">{{phones[0].projectStage.Consulting}}</strong></td>
+                          </tr>
+
+                        <tr>
+                            <td><label class="">Run/Operate</label>   <strong class="InputBox">{{phones[0].projectStage.Operation}}</strong></td>
+                          </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+    </div>
+        
+        
+            <table class="table CustomWidth">
+            <thead>
+              <tr class="SecondMainRow">
+                <th>Offering</th>
+                <th>Sector</th>
+                <th>Industry</th>
+                <th>Brands Involved</th>
+                <th>Offering Alignment</th>
+                <th>OP model Alignment</th>
+                <th>GIC PM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="SecondValueRow">
+                 <td>{{phones[0].projectInfo.Offering}}</td>
+                 <td>{{phones[0].projectInfo.Sector}}</td>
+                 <td>{{phones[0].projectInfo.Industry}}</td>
+                 <td>{{phones[0].projectInfo.Brands_Involved}}</td>
+                 <td>{{phones[0].projectInfo.Offering_alignment}}</td>
+                 <td>{{phones[0].projectInfo.Op_model_alignment}}</td>
+				 <td>{{phones[0].projectInfo.GIC_PM}}</td>
+              </tr>
+             </tbody>
+      </table>
+       
+        <div class="row">
+            <div class="col-md-3">
+                <table class="table KeysTable">
+                    <tbody>
+                        <tr>
+                            <td class="RedText">Stakeholders are Committed</td>
+                            <td>Business Benefits are realized</td>
+                        </tr>
+                        <tr>
+                            <td>Work & Schedule</td>
+                            <td>High Performing Team</td>
+                        </tr>
+                        <tr>
+                            <td>Scope Managed</td>
+                            <td>Risks are being Mitigated</td>
+                        </tr>
+                        <tr>
+                            <td>Organization Benefit</td>
+                            <td>Overall Status</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-md-9">
+                  <table class="table RightSideSecondTable">
+                    <thead>
+                        <tr class="RightSideSecondTableHeader">
+                            <th>7 Keys</th>
+                            <th>Reasons if Amber or Red</th>
+                            <th>Forecast for next period</th>
+                            <th>Go to Green Plan(As applicable)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Stakeholders are Committed</td>
+                            <td></td>
+                            <td class="redCol"></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>Business Benefits are being realized</td>
+                            <td></td>
+                            <td class="YellowCol"></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>Work & Schedule are Predictable</td>
+                            <td></td>
+                            <td class="GreenCol"></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>High Performing Team</td>
+                            <td></td>
+                            <td class="YellowCol"></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>Scope is Realistic and Managed</td>
+                            <td></td>
+                            <td class="YellowCol"></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>Risks are being Mitigated</td>
+                            <td></td>
+                            <td class="redCol"></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>Organization Benefit is being realized</td>
+                            <td></td>
+                            <td class="redCol"></td>
+                            <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+            </div>
+        </div>
+
+        <h3>TOP FIVE RISKS / ISSUES</h3>
+
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table RightSideSecondTable">
+                    <thead>
+                        <tr class="RightSideSecondTableHeader">
+                            <th>#</th>
+                            <th>Risk/Issue</th>
+                            <th>Mitigation</th>
+                            <th>Resp.</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                <td>{{$index+1}}</td>
+                <td>{{phones[0].projectRisk.Risk_Issue}}</td>
+
+                <td>{{phones[0].projectRisk.Mitigation}}</td>
+
+                <td>{{phones[0].projectRisk.Resp}}</td>
+
+                <td>{{phones[0].projectRisk.Dated}}</td>
+
+                <td>{{phones[0].projectRisk.Status}}</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-md-4">
+                <table class="table RightSideSecondTableKpi">
+                    <thead>
+                        <tr class="RightSideSecondTableHeader">
+                            <th>KPIs</th>
+                            <th>REASON FOR RED/AMBER WITH ACION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="CostColor">Cost</td>
+                            <td>{{phones[0].projectKpi.Cost}}</td>
+                        </tr>
+                         <tr>
+                            <td class="SchColor">Schedule</td>
+                            <td>{{phones[0].projectKpi.Schedule}}</td>
+                        </tr>
+                        <tr>
+                            <td class="QltColor">Quality</td>
+                            <td>{{phones[0].projectKpi.Quality}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <section class="FooterSection">
+            <img src="Images/ibm-logo-bottom.png" alt="Footer" class="FooterImage"/>
+        </section>
+    </footer>
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+
+        $("#CloseDate").click(function () {
+            var EmptyDiv = "<label> &nbsp </label>";
+            $("#DateColumn").html(EmptyDiv);
+        });
+
+        $("#CloseScope").click(function () {
+            var EmptyDiv = "<label> &nbsp </label>";
+            $("#ScopeColumn").html(EmptyDiv);
+        });
+
+    });
+</script>

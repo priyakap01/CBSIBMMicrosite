@@ -1,0 +1,62 @@
+.SortByText>label{
+    font-size: 16px;
+    margin-right: 5px;
+}
+.ibmcloudLogo
+{width:400px; height:auto; float:left; padding:5px 0 0 0;}
+
+.HorizontalDivider{
+    margin-top: 7px;
+margin-bottom: 14px;
+}
+.BlogHeader{
+    color: rgb(27, 94, 149);
+    font-size: 26px;
+    font-weight: normal;
+}
+label{
+    font-weight: normal;
+}
+.BlogMatter {
+    font-size: 18px;
+}
+.ReadMoreText{
+    margin-left: 3px;
+}
+#MostRecent{
+ font-weight: 700;   
+}
+.BlogEntries{
+   margin-bottom: 25px;
+}
+.SimilarEntries{
+    background-color: #F2F2F1;
+}
+.ImageClass{
+    display: block;
+}
+.ChatIcon{
+    margin-left: 5px;
+}
+.SimilarBlogHeader{
+    color: rgb(27, 94, 149);
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.BlogSnaps{
+margin-right: -5px;
+margin-left: -5px;
+}
+.WithFloat{
+    float: left;
+}
+.ArchiveHeader{
+    color: #333333;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+.SimilarEntries{
+    height: 1185px;
+}

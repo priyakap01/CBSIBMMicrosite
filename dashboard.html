@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  <title>Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="CustomCss/AboutCustom.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers/controllers.js"></script>
+  
+  <script>
+  function setval()
+  {
+  var val=0;
+  val = val + document.getElementById("SelectProjectDashboard").selectedIndex;
+  }
+  </script>
+  
+  <link href="CustomCss/DashboardCustom.css" rel="stylesheet" media="screen">
+  
+  <!--Styling for Data Tables-->
+	<link rel="stylesheet" type="text/css" href="../datatablesdata/media/css/jquery.dataTables.css">
+	<link rel="stylesheet" type="text/css" href="../datatablesdata/ColVis/css/dataTables.colVis.css">
+	<style type="text/css" class="init">
+
+	th, td { white-space: nowrap; }
+	div.dataTables_wrapper {
+		margin: 0 auto;
+	}
+	td.redBg {
+        background-color: #c62e2d !important;
+        color: white !important;
+    }
+	td.greenBg {
+        background-color: #2bc95b !important;
+        color: white !important;
+    }
+	td.amberBg {
+        background-color: #f7d50c !important;
+        color: white !important;
+    }
+	td.limeBG
+	{
+	    background-color: #ccffcc !important;
+	}
+    .dataTables_scrollHead
+	{ 
+	 box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 6px 1px;
+	}
+    table.dataTable thead
+	{
+	 background: rgb(232,232,232); /* Old browsers */
+     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	 background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIzOSUiIHN0b3AtY29sb3I9IiNlOGU4ZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+	 background: -moz-linear-gradient(top,  rgba(232,232,232,1) 39%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	 background: -webkit-gradient(linear, left top, left bottom, color-stop(39%,rgba(232,232,232,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	 background: -webkit-linear-gradient(top,  rgba(232,232,232,1) 39%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	 background: -o-linear-gradient(top,  rgba(232,232,232,1) 39%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+	 background: -ms-linear-gradient(top,  rgba(232,232,232,1) 39%,rgba(255,255,255,1) 100%); /* IE10+ */
+	 background: linear-gradient(to bottom,  rgba(232,232,232,1) 39%,rgba(255,255,255,1) 100%); /* W3C */
+	 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */
+	}
+	table.dataTable>thead>tr>th	
+	{
+	 border-right:1px solid #ddd1d6;
+	}
+	table.dataTable thead th, table.dataTable thead td {
+     border-bottom: none !important;
+    }
+	.ColVis {
+     position: relative;
+	 opacity:0;
+     float: left !important;
+     border: 1px solid #d0d0d0;
+     cursor: pointer;
+	 width:20px;
+    }
+	#example_wrapper{width:1345px !important;}
+	#example thead th {text-align:center !important;}
+	</style>
+  <!--Scripting for Data Tables-->
+  
+	<script type="text/javascript" language="javascript" src="../datatablesdata/media/js/jquery.js"></script>
+	<script type="text/javascript" language="javascript" src="../datatablesdata/media/js/jquery.dataTables.js"></script>
+	<script type="text/javascript" language="javascript" src="../datatablesdata/ColVis/js/dataTables.colVis.js"></script>
+</head>
+<body ng-controller="PhoneListCtrl">
+<div class="loading">
+    <img src="../images/loading.gif" />
+</div>
+    <header>
+        <div class="HeaderAbout">
+           <img src="images/ibm-logo-top.png" alt="ImageSlider"/>
+        </div>
+    
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+        <div class="ibmcloudLogo">
+      <a href="#"><img src="images/IBM-CBS-Logo.svg" /></a>
+            </div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="about.html" id="AboutLink">About</a></li>
+        <li><a href="Offerings.html" id="OfferingsLink">Solutions</a></li>
+        <li><a href="Services.html" id="ServicesLink">Services</a></li>
+        <li><a href="stories.html" id="StoriesLink">Client Stories</a></li>
+		<li><a href="dashboardsummary.html" id="DashboardLink">Dashboard</a>
+		 <ul>
+		 <li style="text-align:left"><a href="dashboardpipeline.html">Pipeline</a></li>
+		 <li style="text-align:left"><a href="dashboardwin.html">Wins</a></li>
+		 <li style="text-align:left"><a href="dashboard.html">Delivery</a></li>
+		 </ul>
+		</li>
+        <li><a href="news.html" id="NewsLink">News</a></li>
+        <li><a href="FAQ.html" id="FAQLink">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  </header>
+
+    <div class="container" id="SelectDashBoard" style="width:100%; height:auto; padding:0 0 20px 0 !important; margin:0 !important"> 
+        <div class="header-container">
+	         <div id="showmenu"><a href="#" style="text-decoration:none; color:white;"><i class="fa fa-align-justify"></i></a>&nbsp;Filters</div> 
+             <h1 class="DashboardHeader">Delivery Overview</h1>
+	    </div>
+		<div class="Link-div">
+	     <div><a href="dashboardsummary.html" style="color:#1a5d94; text-decoration:none;">Dashboard</a> <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Delivery Summary</div>
+	    </div>
+        <table id="example" class="display" cellspacing="0" style="width:100% !important">
+        <thead>
+            <tr>
+                <th>Client</th>
+                <th>Sector</th>
+                <th>Industry</th>
+                <th>Project Name</th>
+                <th>Project Manager</th>
+                <th>Offering</th>
+                <th>Brands</br>Involved</th> 
+                <th>Contract</br>Status</th>
+                <th>Offering</br>Alignment</th>
+                <th>Operational Model</br>Alignment</th>
+                <th>Consulting</br>POC</th>
+                <th>Personalize Design &</br>Build</th>
+                <th>Run</br>Op</th>
+				<th>Project</br>RAG</th>
+
+            </tr>
+        </thead>
+ 
+        <tbody>
+            <tr ng-repeat = "x in phone | filter:choice">
+                <td><a class="LaunchDashboardButton" ng-click="fetch(x.Name)" style="cursor:pointer;">{{x.Name}}</a></td>
+                <td>{{x.projectInfo.Sector}}</td>
+                <td>{{x.projectInfo.Industry}}</td>
+                <td>{{x.Project_Name}}</td>
+                <td>{{x.projectInfo.GIC_PM}}</td>
+                <td>{{x.projectInfo.Offering}}</td>
+                <td>{{x.projectInfo.Brands_Involved}}</td>
+                <td class="centerAlignText">{{x.Contract_Status}}</td>
+                <td class="centerAlignText">{{x.projectInfo.Offering_alignment}}</td>
+                <td class="centerAlignText">{{x.projectInfo.Op_model_alignment}}</td>
+                <td class="centerAlignText">{{x.projectStage.Consulting}}</td>
+                <td class="centerAlignText">{{x.projectStage.Personalize}}</td>
+                <td class="centerAlignText">{{x.projectStage.Operation}}</td>
+				<td class="centerAlignText">{{x.Project_RAG}}</td>
+            </tr>
+            
+        </tbody>
+     </table>
+
+    </div>
+
+    <div class="container-fluid" id="DashBoardDetails">
+    
+        <div class="row containerMainRow">
+            <div class="col-sm-3" style="padding:0; margin:0 0 0 15px ;background-color: #dbecfe;">
+              <table>
+                <tr>
+                <td style="padding: 10px 10px 10px 0;">
+				<span id="LaunchDashboardSummaryButton"><i class="glyphicon glyphicon-chevron-left"></i></span>
+				<span class="heading-colorblue">Project Name: </span><span style="white-space:normal;"> {{phones.Name}}</span>
+				</td>
+                </tr>
+              </table>
+            </div>
+            
+			<div class="col-sm-9" style="float:right; width:73%">
+            <table width="100%">
+            <tr>
+			<td style="padding: 10px 150px 10px 20px; color:#1a5d94">Scope & Stage:</td>
+			<td class="box-Container">
+			 <div class="box-Container-Heading">Consulting/POC</div>
+			 <div class="box-Content">{{phones.projectStage.Consulting}}</div>
+			</td>
+            <td class="box-Container">
+			 <div class="box-Container-Heading">Personalise/Design/Build</div>
+			 <div class="box-Content">{{phones.projectStage.Personalize}}</div>
+			</td>
+            <td class="box-Container">
+			 <div class="box-Container-Heading">Run/Operate</div>
+			 <div class="box-Content">{{phones.projectStage.Operation}}</div>
+			</td>
+            </tr>
+            </table>
+            </div>
+        </div>
+        
+        
+        <table class="table CustomWidth">
+            <thead>
+              <tr class="SecondMainRow">
+                <th>Offering</th>
+                <th>Sector</th>
+                <th>Industry</th>
+                <th>Brands Involved</th>
+                <th>Offering Alignment</th>
+                <th>OP model Alignment</th>
+                <th>Project Manager</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="SecondValueRow">
+                <td>{{phones.projectInfo.Offering}}</td>
+                 <td>{{phones.projectInfo.Sector}}</td>
+                 <td>{{phones.projectInfo.Industry}}</td>
+                 <td>{{phones.projectInfo.Brands_Involved}}</td>
+                 <td>{{phones.projectInfo.Offering_alignment}}</td>
+                 <td>{{phones.projectInfo.Op_model_alignment}}</td>
+				 <td>{{phones.projectInfo.GIC_PM}}</td>
+              </tr>
+             </tbody>
+        </table>
+       
+        <div class="row">
+            <div class="tab-container-left"> 
+             <table width="100%">
+			 <tr>
+			 <td class="table" style="width:25%; color:black; text-align:center; vertical-align:top;">
+			  <table width="100%" style="border-spacing: 4px !important; height:304px; margin:-5px 0 0 0; border-collapse: separate !important">
+                        <tr>
+                            <td class="{{phones.projectForecast.Stakeholders}}">Stakeholders</br>are Committed</td>
+                            <td class="{{phones.projectForecast.Business_Benefits}}">Business Benefits</br>are Realized</td>
+                        </tr>
+						<tr>
+							<td class="{{phones.projectForecast.Work_Schedule}}">Work and</br> Schedule</td>
+                            <td class="{{phones.projectForecast.Team}}">High Performing</br> Team</td>
+                        </tr>
+                        <tr>
+							<td class="{{phones.projectForecast.Scope}}">Scope </br>Managed</td>
+                            <td class="{{phones.projectForecast.Risks}}">Risks</td>
+                        </tr>
+                        <tr>
+                            <td class="{{phones.projectForecast.Organization_Benefits}}">Organization</br> Benefit</td>
+                            <td class="{{phones.projectForecast.Overall_Status}}">Overall</br> Status</td>
+                        </tr>
+                </table>
+		     </td>
+			 <td class="table" style="width:74%; padding-right:15px; vertical-align:top;">
+				<table class="table RightSideSecondTable" style="min-height:296px; max-height:296px;">
+                    <thead>
+                        <tr class="RightSideSecondTableHeader">
+                            <th style="width:260px;">7 Keys</th>
+                            <th style="max-width:200px;">Comments</th>
+                            <th style="width:90px;">Forecast</th>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align:left">
+                        <tr>
+                            <td class="heading-colorblue">Stakeholders are Committed</td>
+                            <td style="white-space:normal">{{phones.Reasons.Stakeholders}}</td>
+                            <td class="{{phones.colourForecast.Stakeholders}}"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="heading-colorblue">Business Benefits are being realized</td>
+                            <td style="white-space:normal">{{phones.Reasons.Business_Benefits}}</td>
+                            <td class="{{phones.colourForecast.Business_Benefits}}"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="heading-colorblue">Work & Schedule are Predictable</td>
+                            <td style="white-space:normal">{{phones.Reasons.Work_Schedule}}</td>
+                            <td class="{{phones.colourForecast.Work_Schedule}}"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="heading-colorblue">High Performing Team</td>
+                            <td style="white-space:normal">{{phones.Reasons.Team}}</td>
+                            <td class="{{phones.colourForecast.Team}}"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="heading-colorblue">Scope is Realistic and Managed</td>
+                            <td style="white-space:normal">{{phones.Reasons.Scope}}</td>
+                            <td class="{{phones.colourForecast.Scope}}"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="heading-colorblue">Risks are being Mitigated</td>
+                            <td style="white-space:normal">{{phones.Reasons.Risks}}</td>
+                            <td class="{{phones.colourForecast.Risks}}"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="heading-colorblue">Organization Benefit is being realized</td>
+                            <td style="white-space:normal">{{phones.Reasons.Organization_Benefits}}</td>
+                            <td class="{{phones.colourForecast.Organization_Benefits}}"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+			  </td>
+			 
+			 </td>
+			 </tr>
+			 </table>
+            </div>
+
+            <div class="tab-container-right">
+              <table class="table RightSideSecondTableKpi">
+                    <thead>
+                        <tr class="RightSideSecondTableHeader">
+                            <th style="width:200px">KPIs</th>
+							<th>Comments</th>
+							<!-- <th style="width:200px">Reason for Red/Amber with Action</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="{{phones.projectKpi.CostClr}}">Cost</td>
+							<td>{{phones.projectKpi.Cost}}</td>
+                            <!-- <td style="vertical-align:middle; text-align:center">{{phones.projectKpi.Cost}}</td> -->
+                        </tr>
+                         <tr>
+                            <td class="{{phones.projectKpi.ScheduleClr}}">Schedule</td>
+							<td>{{phones.projectKpi.Schedule}}</td>
+                            <!-- <td style="vertical-align:middle; text-align:center">{{phones.projectKpi.Schedule}}</td> -->
+                        </tr>
+                        <tr>
+                            <td class="{{phones.projectKpi.QualityClr}}">Quality</td>
+							<td>{{phones.projectKpi.Quality}}</td>
+                            <!-- <td style="vertical-align:middle; text-align:center">{{phones.projectKpi.Quality}}</td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h3 class="bottom-heading-colorblue">Key Risks/Issues</h3>
+
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table RightSideSecondTable">
+                    <thead>
+                        <tr class="RightSideSecondTableHeader">
+                            <th>No.</th>
+                            <th style="max-width:412px;">Risk/Issue</th>
+                            <th style="max-width:412px">Mitigation</th>
+                            <th style="width:100px">Resp.</th>
+                            <th style="width:100px">Date</th>
+                            <th style="width:80px">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="x in phones.projectRisk">
+                            <td>{{$index+1}}</td>
+                <td style="max-width:412px; text-overflow: ellipsis; overflow: hidden; white-space: normal">{{x.Risk_Issue}}</td>
+
+                <td style="max-width:412px; text-overflow: ellipsis; overflow: hidden; white-space: normal">{{x.Mitigation}}</td>
+
+                <td>{{x.Resp}}</td>
+
+                <td>{{x.Dated}}</td>
+
+                <td>{{x.Status}}</td>
+                        </tr>
+                    </tbody> 
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <section class="FooterSection">
+            <img src="images/ibm-logo-bottom.png" alt="Footer" class="FooterImage"/>
+        </section>
+    </footer>
+	<script>
+	 $("#showmenu").click(function(e){
+			e.preventDefault();
+			$("#menu").toggleClass("show");
+		});
+		$("#menu a").click(function(event){
+			event.preventDefault();
+			if($(this).next('ul').length){
+				$(this).next().toggle('fast');
+				$(this).children('i:last-child').toggleClass('fa-caret-down fa-caret-left');
+			}
+	 });
+    </script>
+	<script type="text/javascript" language="javascript" class="init">
+      setTimeout(function(){
+	  $(".content").hide(); // hides the content DIV
+	   $(document).ready(function() {
+	   var cellNumber;
+	   $("#myNavbar").find("a").css("border", "none");
+            $('#DashboardLink').attr('style', 'color: #333333 !important; font-weight: bold !important; font-family:Helvetica');
+            $("#DashboardLink").css("border-bottom","2px solid #1a5d94");
+			
+	     $('#example').dataTable( {
+		  "order": [[ 7, "asc" ]],
+		  "scrollX": true,
+		   bFilter : false,
+		   bAutoWidth : false,
+		   bInfo: false,
+		   bLengthChange: false,
+		   "fnInitComplete": function () {
+             $('.ColVis').appendTo("#showmenu");
+           },
+		   "columnDefs": [
+            {
+                "targets": [ 6, 8, 9, 10, 11, 12],
+                "visible": false
+            },
+			{
+            "targets": 13,
+              "createdCell": function (td, cellData, rowData, row, col) {
+                 if ( cellData == 'R' ) {
+                  $(td).addClass('redBg')
+                 }
+				 else if( cellData == 'G'){
+				  $(td).addClass('greenBg')
+				 }
+				 else if( cellData == 'A'){
+				  $(td).addClass('amberBg')
+				 }
+               }
+            },
+			{
+            "targets": 10,
+              "createdCell": function (td, cellData, rowData, row, col) {
+                 if ( cellData == 'C' ) {
+                  $(td).addClass('limeBG')
+                 }
+				 else if( cellData == 'W'){
+				  $(td).addClass('limeBG')
+				 }
+               }
+            },
+			{
+            "targets": 11,
+              "createdCell": function (td, cellData, rowData, row, col) {
+                 if ( cellData == 'Y' ) {
+                  $(td).addClass('limeBG')
+                 }
+				 else if( cellData == 'W'){
+				  $(td).addClass('limeBG')
+				 }
+               }
+            },
+			{
+            "targets": 12,
+              "createdCell": function (td, cellData, rowData, row, col) {
+                 if ( cellData == 'Y' ) {
+                  $(td).addClass('limeBG')
+                 }
+				 else if( cellData == 'W'){
+				  $(td).addClass('limeBG')
+				 }
+               }
+            },
+			{
+			
+			
+			}
+           ],
+		    "createdRow": function ( row, data, index ) {
+			if ( data[7] == 'Closed' ) {
+                $('td>a', row).eq(0).addClass('disabled');
+              }
+			  else if ( data[7] == 'To Start' ) {
+                $('td>a', row).eq(0).addClass('disabled');
+              }
+			  else if ( data[7] == 'To start' ) {
+                $('td>a', row).eq(0).addClass('disabled');
+              }
+            },
+		   dom: 'C<"clear">lfrtip',
+		   colVis: {
+			aiExclude: [0, 1, 2, 3, 4, 5, 7, 10, 11, 12, 13 ],
+			groups: [
+				{
+					title:"Cons-Poc</br>Pers Design Build</br>Run-OP",
+					columns: [ 10, 11, 12 ]
+				}
+			],
+			activate: "mouseover",
+			"buttonText": "Filter"
+		   },
+		   //"scrollY": "460px",
+           //"paging": false
+	     } );
+		 
+	     $('#example').on('click','.LaunchDashboardButton',function () {
+            $("#SelectDashBoard").hide();
+            $("#DashBoardDetails").show();
+         });
+		 
+		 $("#LaunchDashboardSummaryButton").on('click',function () {
+            $("#SelectDashBoard").show();
+            $("#DashBoardDetails").hide();
+         });
+       
+	   } );
+	  $(".loading").fadeOut("slow"); // loading DIV fades out
+      $(".content").fadeIn("slow"); // content DIV fades in
+	 },3500);
+     </script>
+</body>
+</html>
+

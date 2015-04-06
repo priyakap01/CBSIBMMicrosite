@@ -1,0 +1,186 @@
+ @font-face {
+    font-family: HelveticaNeueLTStd-Lt;
+    src: local(HelveticaNeueLTStd-Lt), url('../Fonts/HelveticaNeueLTPro-Lt.otf') format('opentype');
+}
+  @font-face {
+    font-family: Helvetica Neue;
+    src: local(Helvetica Neue), url('../Fonts/Helvetica-Normal.ttf') format('truetype');
+}
+footer{float:left; width:100%;}
+body{font-family:HelveticaNeueLTStd-Lt; color:#333; font-size:16px;}
+ .loading {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left: 0;
+    background: #000;
+    z-index:9999;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 300px;
+    color: #fff;
+}
+.navbar
+{margin-bottom:0 !important;}
+
+.div-clientlist-image
+{
+float:left;
+width:100%;
+height:auto;
+text-align:center;
+border-top:1px solid #ccc;
+margin-bottom:20px;
+}
+
+.image-row-top
+{
+ float:left;
+ width:100%;
+ height:auto;
+}
+
+.image-row-bottom
+{
+ float:left;
+ width:100%;
+ height:auto;
+}
+
+.image-container
+{
+float:left;
+height:150px;
+width:24%;
+text-align:center;
+padding:50px 0 0 0;
+}
+.Content-Container
+{
+ float:left;
+ width:90%;
+ height:auto;
+ margin:0 0 0 60px;
+}
+.header-container
+{
+ float:left;
+ width:100%;
+ height:auto;
+}
+
+.header-container>.heading-left
+{
+float:left;
+height:auto;
+width:70%;
+border-bottom:1px solid #333;
+}
+
+.header-container>.heading-right
+{
+float:right;
+height:auto;
+width:auto;
+padding:19px 10px 0 0;
+margin:20px 0 0 0;
+}
+
+.content-div
+{
+ float:left;
+ width:97%;
+ height:auto;
+}
+
+
+.slick-dots
+{bottom:0 !important;}
+.slick-dots li button:before
+{font-size:10px; color:#fff !important;}
+ .slick-prev, .slick-next
+ {border-radius:10px; height:18px;}
+
+
+
+/*------ slider base styles Starts---------*/
+
+
+
+#slider_wrapper {
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+	height: auto;
+}
+
+
+.slider {
+	position: relative;
+	overflow: hidden;
+}
+
+.slide {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.slide.testo {
+	overflow: auto;
+}
+
+.slide .youtube, .slide .vimeo {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.navslide {
+	position: relative;
+	margin: -100px 0 0 0;
+	padding: 0;
+	text-align: right;
+	width: 100%;
+	clear: both;
+}
+
+.navslide p span {
+	margin: 0px 1px;
+	cursor: pointer;
+}
+
+.caption {
+	position: absolute;
+	bottom: -42px;
+	width: 100%;
+	background: #222;
+	background: rgba(20,20,20,0.7);
+	color: #f7f7f7;
+	border: none;
+	border-top: 1px solid #404040;
+}
+
+.caption p {
+	padding: 10px 10px 5px;
+	text-shadow: 0 1px 0 rgba(20,20,20,0.9);
+}
+
+.caption p {
+	margin: 5px 0px;
+}
+
+
+/*------ slider base styles Ends---------*/
+
+@media screen and (max-width: 768px) {
+
+    .OfferingCustomeRow {
+        margin-right: 15px !important;
+    }
+    #OfferingContents {
+    border:none;
+    }
+}

@@ -1,0 +1,161 @@
+.DashboardHeader{
+    text-align: center;
+}
+.container{
+    background-color: #d5d5d5;
+}
+.rightSpan{
+    float: right;
+    margin-top: 3px;
+}
+.DateLabel{
+    border-left: 1px solid gray;
+margin-left: 20px;
+padding-left: 20px;
+
+}
+.HeaderFirst{
+color: #999999;    
+}
+.FirstTable{
+     margin-top: 20px;
+}
+.FirstRow{
+    background: #F2F1F1;
+}
+.TableFirstBody{
+    background: #fff;
+}
+.InputBox{
+    border: 1px solid #d5d5d5;
+    margin-right: 40px;
+    float: right;
+    width: 22px;
+    padding-left: 4px;
+}
+.SecondValueRow{
+    background: #fff;
+}
+.SecondMainRow{
+    background: #F2F1F1;
+}
+.KeysTable>tbody>tr>td{
+    padding: 20px;
+    background: #F2F1F1;
+    margin: 20px;
+    border: none !important;
+}
+.RightSideSecondTableHeader{
+    background: #F2F1F1;
+}
+.RightSideSecondTable>tbody>tr>td{
+    padding: 12px;
+    background: #FFF;
+}
+.RightSideSecondTableKpi>tbody>tr>td{
+    padding: 12px;
+    background: #FAF7F7;
+}
+.CustomWidth{
+    margin-left: 15px;
+    width: 98.5%;
+}
+.ProjectNameRow{
+    height: 100px;
+}
+.CostColor{
+    background-color: red !important;
+}
+.SchColor{
+    background-color: yellow !important;
+}
+.QltColor{
+    background-color: green !important;
+}
+table {
+    border-collapse: collapse;
+}
+
+table, td, th {
+    border: 1px solid #666666;
+}
+.KeysTable{
+    border-spacing: 10px !important;
+    border-collapse: separate !important;
+    border: none !important;
+}
+.RightSideSecondTable,.RightSideSecondTableKpi{
+    margin-top: 10px;
+}
+.RedText{
+    color: red;
+}
+.redCol{
+    padding: 2px !important;
+    background-color: red !important;
+}
+.YellowCol{
+    padding: 2px !important;
+    background-color: yellow !important;
+}
+.GreenCol{
+    padding: 2px !important;
+    background-color: green !important;
+}
+#SelectDashBoard{
+    display: table;
+    height: 560px;
+    background: url('../images/dashboard-bg.jpg');
+}
+#DashBoardDetails{
+    display: none;
+}
+.inlineBlock{
+    display: inline-block !important;
+    opacity: 1 !important;
+}
+.Middle {
+    margin-left: auto;
+    margin-right: auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+.InlineCentre{
+    margin-left: auto;
+    margin-right: auto; 
+    width: 65%;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+    height: 100px;
+    padding: 30px;
+}
+.LaunchButton{
+    opacity: 1 !important;
+    float: right;
+    margin-right: 10px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(85, 134, 175);
+}
+.CustomWidthForSelect{
+ width: 450px;
+    height: 50px;
+    font-size: 18px;
+    float: left
+}
+.dropdown-menu {
+    min-width: 350px !important;
+}
+
+/* Optional for caret */
+.dropdown-toggle .caret {
+    position: absolute;
+    right: 12px;
+    top: calc(50% - 2px);
+}
+@media screen and (max-width: 768px) {
+    .dropdown-toggle {
+        width: 100%;   
+    }
+}

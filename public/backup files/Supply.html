@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  <title>Supply Page</title>
+  <meta charset="utf-8">
+  <link href="CustomCss/Supplypage.css" rel="stylesheet" media="screen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers/controllers.js"></script>
+  </head>
+<body ng-controller="bizzCtrl">
+    <header>
+        <div class="HeaderAbout">
+           <img src="Images/ibm-logo-top.png" alt="ImageSlider"/>
+        </div>
+     </header>
+     <h1 class="SupplypageHeader">
+      Supply page Entry Form
+     </h1>
+     <br>
+     <br>
+     <br>
+     <form>
+<table text align="center">
+    <tr><td><label for="EmpCode">Emp_Code:</label>                
+  <td><input type="text" name="EmpCode" value= "{{bizz[0].Emp_Code}}" size="20"  margin-left="20px" disabled>
+    <tr><td><label for="EmployeeName">Employee Name:</label>                
+  <td><input type="text" name="EmployeeName" value= "{{bizz[0].Emp_Name}}"  size="20"  margin-left="20px" disabled>
+     
+     <tr><td><label for="Emp_NotesId">Emp_Notes ID:</label>                
+  <td><input type="text" name="Emp_NotesId" value= "{{bizz[0].Emp_NotesID}}" size="20" margin-left="20px";>
+     <tr><td><label for="ProjectName">Project_Name:</label>
+    <td><input type="text" name="ProjectName" value= "{{bizz[0].Project_Name}}"size="20" margin-left="20px";>  
+     <tr><td><label for="Project_Start_Date
+">Project_Start_Date:</label>                
+  <td><input type="text" name="Project_Start_Date" value= "{{bizz[0].Project_Start_Date}}" size="20" margin-left="20px";>
+     <tr><td><label for="Project_End_Date
+">Project_End_Date:</label>                
+  <td><input type="text" name="Project_End_Date
+" size="20" value= "{{bizz[0].Project_End_Date}}" margin-left="20px";>
+
+
+    <tr><td><label for="DOB">Date Of Birth:</label>                
+  <td><input type="text" name="DOB" size="20" margin-left="20px";>
+    
+    
+
+  
+
+</table>
+<br>
+<br>
+<br>
+<div align="center">
+<input class="btn" type="button" value="SaveChanges" onclick="alert('changes saved')">
+<input class="btn" type="button" value="close">
+    </div>
+</form>
+   </body>
+   </html>
