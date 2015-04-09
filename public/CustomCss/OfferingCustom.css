@@ -6,11 +6,19 @@
     font-family: Helvetica Neue;
     src: local(Helvetica Neue), url('../Fonts/Helvetica-Normal.ttf') format('truetype');
 }
-li:empty
+li.li-Style:empty
 {
  display:none !important;
 }
-
+h3.content-heading-Style:empty
+{
+ display:none;
+}
+.content-heading-Style
+{
+ margin: 0 0 10px -20px; font-size:20px; padding:0
+}
+.li-Style{margin: 0 0 10px 10px;}
 .navbar
 {margin-bottom:0 !important;}
 

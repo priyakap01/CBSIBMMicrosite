@@ -1,14 +1,11 @@
  
  @font-face {
-    font-family: HelveticaNeueLTStd-Lt;
-    src: local(HelveticaNeueLTStd-Lt), url('../Fonts/HelveticaNeueLTPro-Lt.otf') format('opentype');
+    font-family: HelveticaNeue-Light;
+    src: local(HelveticaNeue-Light), url('../Fonts/HelveticaNeue-Light.otf') format('opentype');
 }
-  @font-face {
-    font-family: Helvetica Neue;
-    src: local(Helvetica Neue), url('../Fonts/Helvetica-Normal.ttf') format('truetype');
-}
+
  body {
-    font-family:HelveticaNeueLTStd-Lt, HelveticaNeue-Regular,' Helvetica','Helvetica Neue Regular', 'Helvetica Neue', HelvRegularIBM;
+    font-family:HelveticaNeue-Light, HelveticaNeue-Regular,' Helvetica','Helvetica Neue Regular', 'Helvetica Neue', HelvRegularIBM;
 }
 footer{float:left; width:100%;}
 /* just some CSS for the loading DIV */

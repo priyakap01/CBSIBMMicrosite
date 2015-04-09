@@ -2,7 +2,7 @@
 
 <html lang="en" ng-app = "phonecatApp">
 <head>
-  <title>Offerings</title>
+  <title>Solutions</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="CustomCss/AboutCustom.css" rel="stylesheet" media="screen">
@@ -59,12 +59,12 @@
   </header>
     <div class="ImageSlider" style="margin:0 !important;">
 	  <div>
-          <img class="SlidingImage" src="images/cbs-banner2.jpg" alt="ImageSlider"/>
+          <img class="SlidingImage" src="images/cbs-banner-solution.jpg" alt="ImageSlider"/>
       </div>
     </div>
 
     
-    <section class="ArticleHolder">
+    <section class="ArticleHolder" style="padding:20px;">
         Offerings based on cross-industry patterns, tailored to specific industry<br>use cases combining the scale, speed and ease of cloud
     </section>
 
@@ -93,7 +93,7 @@
 			 <p style="color:#a2d14f">{{op[0].Heading}}</p>
 			 </div>
 			 <span ng-repeat="x in op" on-finish-render>
-			 <div class="tab-menu-item tab-menu-item-lime" target="{{$index+7}}">{{x.Subheading}}</div>
+			 <div class="tab-menu-item tab-menu-item-lime" target="{{$index+oplength[0]+1}}">{{x.Subheading}}</div>
              </span>
 			</div>
 		   </div>
@@ -105,7 +105,7 @@
 			 <p style="color:#e28049">{{fin[0].Heading}}</p>
 			 </div>
 			 <span ng-repeat="x in fin" on-finish-render>
-			 <div class="tab-menu-item tab-menu-item-pink" target="{{$index+15}}">{{x.Subheading}}</div>
+			 <div class="tab-menu-item tab-menu-item-pink" target="{{$index+finlength[0]+1}}">{{x.Subheading}}</div>
 			 </span>
 			</div>
 			
@@ -116,7 +116,7 @@
 			 <p style="color:#ff9f00">{{hr[0].Heading}}</p>
 			 </div>
 			 <span ng-repeat="x in hr" on-finish-render>
-			 <div class="tab-menu-item tab-menu-item-orange" target="{{$index+19}}">{{x.Subheading}}</div>
+			 <div class="tab-menu-item tab-menu-item-orange" target="{{$index+hrlength[0]+1}}">{{x.Subheading}}</div>
 		     </span>
 			</div>
            </div>
@@ -126,7 +126,7 @@
 		<!-- Marketing Content Starts-->
 		<span ng-controller="offmarketingCtrl">
 		<span ng-repeat="z in mar">
-        <div class="col-xs-6 targetDiv" id="{{div[$index]}}">
+        <div class="col-xs-6 targetDiv" style="height:100%" id="{{div[$index]}}">
 		   <div class="Heading-container">
 		   <div class="Image-container"><img src="{{z.Logo}}"/></div>
 		   <div class="Heading-Title-container">
@@ -150,26 +150,47 @@
 			</div>
 			
 			<div class="content-section content1" style="display:block;">
-			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab1.Lines">
-			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab1.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
 			 </ul>
 			</div>
 			
 			<div class="content-section content2">
-			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab2.Lines">
-			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab2.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
 			 </ul>
 			</div>
 			
 			<div class="content-section content3">
-			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab3.Lines">
-			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab3.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
 			 </ul>
 			</div>
 			
 			<div class="content-section content4">
-			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab4.Lines">
-			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab4.TabContent">
+			<h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
+			 </ul>
+			</div>
+			
+			<div class="content-section content5">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab5.TabContent">
+			<h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
 			 </ul>
 			</div>
 		   </div>
@@ -181,7 +202,7 @@
 		<!-- Operations Content Starts-->
 		<span ng-controller="offoperationCtrl">
 		<span ng-repeat="z in op">
-        <div class="col-xs-6 targetDiv" id="{{div[$index+6]}}">
+        <div class="col-xs-6 targetDiv" id="{{div[$index+oplength[0]]}}">
 		   <div class="Heading-container">
 		   <div class="Image-container"><img src="{{z.Logo}}"/></div>
 		   <div class="Heading-Title-container">
@@ -205,26 +226,47 @@
 			</div>
 			
 			<div id="active1" class="content-section content1" style="display:block;">
-			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab1.Lines">
-			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab1.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
 			 </ul>
 			</div>
 			
 			<div class="content-section content2">
-			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab2.Lines">
-			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab2.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
 			 </ul>
 			</div>
 			
 			<div class="content-section content3">
-			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab3.Lines">
-			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab3.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
 			 </ul>
 			</div>
 			
 			<div class="content-section content4">
-			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab4.Lines">
-			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab4.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
+			 </ul>
+			</div>
+			
+			<div class="content-section content5">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab5.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
 			 </ul>
 			</div>
 		   </div>
@@ -236,7 +278,7 @@
 		<!-- Finance Content Starts-->
 		<span ng-controller="offfinanceCtrl">
 		<span ng-repeat="z in fin">
-        <div class="col-xs-6 targetDiv" id="{{div[$index+14]}}">
+        <div class="col-xs-6 targetDiv" id="{{div[$index+finlength[0]]}}">
 		   <div class="Heading-container">
 		   <div class="Image-container"><img src="{{z.Logo}}"/></div>
 		   <div class="Heading-Title-container">
@@ -260,26 +302,47 @@
 			</div>
 			
 			<div class="content-section content1" style="display:block;">
-			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab1.Lines">
-			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab1.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
 			 </ul>
 			</div>
 			
 			<div class="content-section content2">
-			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab2.Lines">
-			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab2.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
 			 </ul>
 			</div>
 			
 			<div class="content-section content3">
-			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab3.Lines">
-			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab3.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
 			 </ul>
 			</div>
 			
 			<div class="content-section content4">
-			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab4.Lines">
-			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab4.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
+			 </ul>
+			</div>
+			
+			<div class="content-section content5">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab5.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
 			 </ul>
 			</div>
 		   </div>
@@ -291,7 +354,7 @@
 		<!-- HR Content Starts-->
 		<span ng-controller="offhrCtrl">
 		<span ng-repeat="z in hr">
-        <div class="col-xs-6 targetDiv" id="{{div[$index+18]}}">
+        <div class="col-xs-6 targetDiv" id="{{div[$index+hrlength[0]]}}">
 		   <div class="Heading-container">
 		   <div class="Image-container"><img src="{{z.Logo}}"/></div>
 		   <div class="Heading-Title-container">
@@ -315,26 +378,47 @@
 			</div>
 			
 			<div class="content-section content1" style="display:block;">
-			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab1.Lines">
-			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab1.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
 			 </ul>
 			</div>
 			
 			<div class="content-section content2">
-			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab2.Lines">
-			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab2.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
 			 </ul>
 			</div>
 			
 			<div class="content-section content3">
-			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab3.Lines">
-			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab3.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
 			 </ul>
 			</div>
 			
 			<div class="content-section content4">
-			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab4.Lines">
-			 <li style="margin:0 0 10px 0;">{{x}}</li>
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab4.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
+			 </ul>
+			</div>
+			
+			<div class="content-section content5">
+			 <ul style="text-align:justify; padding:0;" ng-repeat ="x in z.Tab5.TabContent">
+			 <h3 class="content-heading-Style">{{x.Heading}}</h3>
+			 <span ng-repeat="y in x.Lines">
+			 <li class="li-Style">{{y}}</li>
+			 </span>
 			 </ul>
 			</div>
 		   </div>
@@ -346,7 +430,6 @@
     </div>
        <footer>
   <section class="FooterSection">
-        <img src="images/ibm-logo-bottom.png" alt="Footer" class="FooterImage"/>
   </section>
     </footer>
 </body>    
@@ -440,6 +523,11 @@
          e.preventDefault(); //prevent the link from being followed
 		 $('.content-section').hide();
 		 $('.content4').show();
+       });
+	    $(".link-tab5").click(function(e) {
+         e.preventDefault(); //prevent the link from being followed
+		 $('.content-section').hide();
+		 $('.content5').show();
        });
 	 $(".loading").fadeOut("slow"); // loading DIV fades out
     $(".content").fadeIn("slow"); // content DIV fades in
