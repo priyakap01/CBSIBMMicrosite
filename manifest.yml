@@ -1,7 +1,6 @@
 applications:
 - disk_quota: 1024M
-  host: ibm-cbs-test
-  name: CBSIBMMicroSite
+  host: ibm-cbs  name: CBSIBMMicroSite
   path: .
   domain: stage1.mybluemix.net
   instances: 1

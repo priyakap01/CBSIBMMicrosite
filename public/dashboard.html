@@ -226,8 +226,10 @@
                 <th>Sector</th>
                 <th>Industry</th>
                 <th>Brands Involved</th>
+                <!-- <th>Offering Alignment</th> -->
+                <!-- <th>OP model Alignment</th> -->
                 <th>Project Manager</th>
-                
+				<th colspan="3">KPIs</th>
               </tr>
             </thead>
             <tbody>
@@ -236,11 +238,15 @@
                  <td>{{phones.projectInfo.Sector}}</td>
                  <td>{{phones.projectInfo.Industry}}</td>
                  <td>{{phones.projectInfo.Brands_Involved}}</td>
+                 <!-- <td>{{phones.projectInfo.Offering_alignment}}</td> -->
+                 <!-- <td>{{phones.projectInfo.Op_model_alignment}}</td> -->
 				 <td>{{phones.projectInfo.GIC_PM}}</td>
+				 <td class="{{phones.projectKpi.CostClr}}">Cost</td>
+				 <td class="{{phones.projectKpi.ScheduleClr}}">Schedule</td>
+				 <td class="{{phones.projectKpi.QualityClr}}">Quality</td>
               </tr>
              </tbody>
         </table>
-        
        
         <div class="row">
             <div class="tab-container-left"> 
@@ -325,35 +331,6 @@
 			 </tr>
 			 </table>
             </div>
-
-            <div class="tab-container-right">
-              <table class="table RightSideSecondTableKpi">
-                    <thead>
-                        <tr class="RightSideSecondTableHeader">
-                            <th style="width:200px">KPIs</th>
-							<th>Comments</th>
-							<!-- <th style="width:200px">Reason for Red/Amber with Action</th> -->
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="{{phones.projectKpi.CostClr}}">Cost</td>
-							<td>{{phones.projectKpi.Cost}}</td>
-                            <!-- <td style="vertical-align:middle; text-align:center">{{phones.projectKpi.Cost}}</td> -->
-                        </tr>
-                         <tr>
-                            <td class="{{phones.projectKpi.ScheduleClr}}">Schedule</td>
-							<td>{{phones.projectKpi.Schedule}}</td>
-                            <!-- <td style="vertical-align:middle; text-align:center">{{phones.projectKpi.Schedule}}</td> -->
-                        </tr>
-                        <tr>
-                            <td class="{{phones.projectKpi.QualityClr}}">Quality</td>
-							<td>{{phones.projectKpi.Quality}}</td>
-                            <!-- <td style="vertical-align:middle; text-align:center">{{phones.projectKpi.Quality}}</td> -->
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
 
         <h3 class="bottom-heading-colorblue">Key Risks/Issues</h3>
@@ -394,7 +371,6 @@
 
     <footer>
         <section class="FooterSection">
-            <img src="images/ibm-logo-bottom.png" alt="Footer" class="FooterImage"/>
         </section>
     </footer>
 	<script>
